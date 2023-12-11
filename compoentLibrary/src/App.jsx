@@ -5,6 +5,7 @@ import { useLocation, Route, Redirect,Switch } from 'react-router-dom'
 import MonthSelect from './views/MonthSelect/index.jsx'
 import TimeSelect from './views/TimeSelect/index.jsx';
 import ModalList from './views/Modal/index.jsx';
+import Yuanpan from './views/Yuanpan/index.jsx';
 const { Header, Content, Sider } = Layout;
 const items1 = ['文档', '组件'].map((key) => ({
   key,
@@ -23,6 +24,11 @@ const items2 =[
     key: `ModalList`,
     label: `ModalList对话框组件`,
   },
+  {
+    key: `Yuanpan`,
+    label: `圆盘抽奖`,
+  },
+  
 ]
 
 const  App=(props)=> {
@@ -64,6 +70,7 @@ const  App=(props)=> {
          <Route path='/home/MonthSelect' component={MonthSelect}></Route>
          <Route path='/home/TimeSelect' component={TimeSelect}></Route>
          <Route path='/home/ModalList' component={ModalList}></Route>
+         <Route path='/home/Yuanpan' component={Yuanpan}></Route>
             <Redirect from="/home" to="/home/MonthSelect" exact></Redirect>
          </Switch>
         </Content>
