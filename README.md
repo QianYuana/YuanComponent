@@ -6,6 +6,8 @@
 
 **dumiCompoent** 基于dumi搭建，可以直接在github 查看源码进行整合。（后期会一直添加维护）   
 
+**发展方向**
+不久将加入算法模块，目前本人正在刷算法进行累计，相信很快会与大家见面！！可以留下你的**STAR**，到时会第一时间知道哦。
 
 ## 目录结构
 ```bash
@@ -37,6 +39,12 @@
 │   ├── package.json
 │   └── tsconfig.json
 ```
+**指南**
+![image](https://github.com/QianYuana/YuanComponent/assets/102220953/85da1cd5-885a-4c75-8c39-06fb8cf16c0b)
+
+**组件**
+![image](https://github.com/QianYuana/YuanComponent/assets/102220953/923633ae-49a7-43ad-9761-dbd2c0af293f)
+
 **使用方法**
 
 ```bash
