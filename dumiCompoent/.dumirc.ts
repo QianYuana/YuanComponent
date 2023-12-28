@@ -48,5 +48,12 @@ export default defineConfig({
   padding-inline-end: 32px;
   box-sizing: border-box;
   overflow: auto;
+}`,
+`.dumi-default-features[data-cols='2'] > .dumi-default-features-item {
+  width: 25% !important;
+  text-align: center;
+}`,
+`.dumi-default-features[data-cols='2'] > .dumi-default-features-item:nth-child(odd) {
+  margin-inline-end: 0 !important; 
 }`, `/less/index.less`],
 });
