@@ -1,7 +1,9 @@
 ---
 toc: content
+order: 2
 group:
   title: Components
+  
 nav:
   title: Components
   path: /components
@@ -67,3 +69,7 @@ export default () => {
 - This is a controlled component, please use it in the form. The component uses the **props.onchange** to pass the callback directly to the **Form**. No need to operate.
 - If you need to get the value, you can use the **changTime** to get the value through the callback.
 - If you want to continue development, you can click on the top right corner of GitHub to review and modify.
+
+## Finally
+
+If you think it's good, you can click the "Star" button on the top right to support it, thank you.

@@ -1,7 +1,9 @@
 ---
-toc: content
+toc: content 
+order: 3
 group:
   title: Components
+
 nav:
   title: Components
   path: /components
@@ -46,3 +48,7 @@ export default () => {
 - Use the **name** attribute in the **Form** form, and the **time** attribute receives it. The format of the **time** attribute is **['startTime', 'endTime']**. The **startTime** and **endTime** are in the format of **HH:mm:ss**.
 - The component uses **moment** internally for date processing, so you need to import **moment**. Please refer to the **moment** official website for how to use **moment**.
 - To continue development, you can click on the top right corner **GitHub** to view and modify.
+
+## Finally
+
+If you think it's good, you can click the "Star" button on the top right to support it, thank you.

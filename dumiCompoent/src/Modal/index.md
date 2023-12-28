@@ -1,7 +1,9 @@
 ---
 toc: content
+order: 1
 group:
   title: 组件
+  
 ---
 
 # ModalList 对话框表单
@@ -250,4 +252,8 @@ export default App
 
 - 受控组件，如果需要默认值，请在 initialValues 中设置
 - 详细参数请参考 [antd 表单组件](https://4x-ant-design.antgroup.com/components/form-cn/#API)
+
+## 最后
+
+如果您觉得不错，可以点击右上角**Star**支持一下，谢谢。
 

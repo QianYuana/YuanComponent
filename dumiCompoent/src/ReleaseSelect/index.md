@@ -1,7 +1,9 @@
 ---
 toc: content
+order: 4
 group:
   title: 组件
+  
 nav:
   title: 组件
   path: /components
@@ -62,3 +64,7 @@ export default () => {
 - 非受控组件，组件内部使用的**props.onchange** 进行回调传递直接传递到**From**表单中，也可以**onchange**进行自定义操作。
 - 组件内部使用**moment**进行日期处理，所以需要引入**moment**，**moment**的使用方式请查看**moment**官网。
 - 想要继续开发可以点击右上角**GitHub**进行查看修改。
+
+## 最后
+
+如果您觉得不错，可以点击右上角**Star**支持一下，谢谢。

@@ -1,7 +1,9 @@
 ---
 toc: content
+order: 2
 group:
   title: 组件
+  
 nav:
   title: 组件
   path: /components
@@ -67,3 +69,7 @@ export default () => {
 - 受控组件，请在表单中进行使用，组件内部使用的**props.onchange** 进行回调传递直接传递到**From**表单中，不需要进行操作。
 - 需要进行取值操作的，可以使用**changTime**，进行回调拿值。
 - 想要继续开发可以点击右上角**GitHub**进行查看修改。
+
+## 最后
+
+如果您觉得不错，可以点击右上角**Star**支持一下，谢谢。
