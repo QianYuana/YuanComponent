@@ -1,22 +1,23 @@
 ---
 hero:
-  title: library
-  description: A react library developed with dumi
+  title: QianYuan X
+  description: A React UI front-end component library based on Ant Design 4.x 
   actions:
-    - text: Hello
-      link: /
-    - text: World
-      link: /
+    - text: Get Started Now
+      link: /guide
+    - text: Component Docs
+      link: /components/modal
 features:
-  - title: Hello
+  - title: Learning
     emoji: 💎
-    description: Put hello description here
-  - title: World
+    description: You can only keep progressing when you are learning
+  - title: Sharing
     emoji: 🌈
-    description: Put world description here
-  - title: '!'
+    description: The joy of code is a pleasure to enjoy
+  - title: Growth
+    emoji: 🌱
+    description: The process of growth is also the process of accumulation
+  - title: Accumulation
     emoji: 🚀
-    description: Put ! description here
+    description: Drop by drop, the stone is worn away; little by little, the water becomes a spring!
 ---
-
-dumiCompoent
