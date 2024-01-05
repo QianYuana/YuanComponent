@@ -1,6 +1,7 @@
 ---
 toc: content
 title: Introduction
+order : 1
 nav:
   title: Algorithm
   path: /algorithm
