@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ModalList from "./Modal.jsx";
+import ModalList from "./Modal.js";
 import hljs from "highlight.js";
 import { Collapse, Form, Button, message } from "antd";
 import "highlight.js/styles/default.css"; // 引入默认样式
