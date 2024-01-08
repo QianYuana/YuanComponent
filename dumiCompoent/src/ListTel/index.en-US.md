@@ -24,7 +24,25 @@ import { ListTel } from 'dumiCompoent';
 
 const App: React.FC = () => {
   return (
-      <ListTel title="自定义标题">
+      <ListTel title="自定义标题" defaultActiveKey={ ["1"]}>
+          <p>自定义内容</p>
+      </ListTel>
+  );
+}
+export default App;
+```
+
+### Customize default deployment
+
+```tsx
+import { ListTel } from 'dumiCompoent';
+
+const App: React.FC = () => {
+  return (
+      <ListTel title="自定义标题"  defaultActiveKey={ ["1"]}>
+          <p>自定义内容</p>
+      </ListTel>
+      <ListTel title="不展开"  >
           <p>自定义内容</p>
       </ListTel>
   );
@@ -40,6 +58,7 @@ export default App;
 | children | Content | ReactNode | - |
 | className | Style class name | string | - |
 | style | Inline style | CSSProperties | - |
+| defaultActiveKey | Default active key | string[] | - |
 
 ## Precautions
 
