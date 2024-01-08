@@ -39,12 +39,14 @@ import { ListTel } from 'dumiCompoent';
 
 const App: React.FC = () => {
   return (
-      <ListTel title="自定义标题"  defaultActiveKey={ ["1"]}>
+    <>
+      <ListTel title="自定义标题"  defaultActiveKey={["1"]}>
           <p>自定义内容</p>
       </ListTel>
-      <ListTel title="不展开"  >
+      <ListTel title="不展开">
           <p>自定义内容</p>
       </ListTel>
+    </>
   );
 }
 export default App;

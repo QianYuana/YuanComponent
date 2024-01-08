@@ -1,29 +1,29 @@
 ---
 toc: content
 order: 2
-title: 闭包的概念
+title: The concept of closures
 group:
-  title: 闭包
+  title: closure
 nav:
-  title: 算法
+  title: Algorithm
   path: /algorithm
   order: 3
 ---
 
-# 闭包
+# Closure
 
-对于前端开发工程师来讲，闭包是一个很难弄懂而且十分难征服的一个概念！因为闭包的生成不仅仅与变量的作用域相关而且与变量的生命周期也有着密切的关系。最后我可以肯定的告诉你，闭包在实际开发的过程中应用十分广泛，所以你**必须要掌握**它。
+For front-end developers, closures are a difficult concept to understand and master! Because the generation of closures is not only related to the scope of variables, but also closely related to the lifecycle of variables. Finally, I can confidently tell you that closures are widely used in practical development, so you **must master** it.
 
-## 闭包的定义
+## Definition of closure
 
-闭包是指有权访问另一个函数作用域中的变量的函数。**用通俗的话说的就是在一个函数内部创建另一个函数**。
+A closure is a function that has access to the variables in the scope of another function. **In simple terms, it means creating another function inside a function**.
 
-## 闭包的作用
+## The role of closure
 
-闭包的作用是使得函数拥有状态，即使函数执行结束后，其内部的变量依然存在，并且可以继续访问。
+The role of closures is to enable functions to have state, so that even after the function's execution ends, its internal variables still exist and can be accessed.
 
-## 代码实例
-可能大家光看概念的话不知道闭包是怎么产生的，下面我们通过一个代码实例来说明闭包的产生。
+## Code example
+Maybe if you only look at the concept, you don't know how closures arise. The following code example will illustrate the creation of closures.
 
 ```ts
 function add(x : number) {
@@ -36,17 +36,17 @@ var f = add(1);
 console.log(f(2)); // 3
 ```
 
-在上面的代码中，函数`add`接收一个参数`x`，并返回一个函数。这个函数接收一个参数`y`，并返回`x + y`。
-这就创造了一个闭包，这个闭包可以访问外部函数`add`的参数`x`。当函数`f`调用时，它会将参数`2`传入函数`add`中，并返回`x + y`，即`3`。
+In the above code, the function `add` receives a parameter `x` and returns a function. This returned function takes a parameter `y` and returns `x + y`.
+This creates a closure that can access the parameter `x` of the outer function `add`. When the function `f` is called, it passes the parameter `2` into the function `add` and returns `x + y`, which is `3`.
 
-## 闭包的优势
+## Advantages of closures
 
-- 闭包可以让我们将函数内部的状态保存起来，从而避免了使用全局变量。
-- 闭包的优势在于它可以让我们在函数外部定义函数，从而避免了在函数内部再定义一次函数。
-- 让这些变量的值始终保持在内存中。不会在函数调用后被清除
+- Closures allow us to store the state of functions internally, avoiding the need for global variables.
+- The advantage of closures lies in the fact that they allow us to define functions outside of the scope of the function itself, eliminating the need to redefine functions within their own scope.
+- Closures keep these variable values in memory, ensuring that they are not cleared after function calls.
 
-## 闭包的缺点
-闭包确实好用，但是也存在一些缺点：
-- 闭包会导致内存的泄露，因为闭包会一直存在，直到没有其他变量指向它。
-- 由于闭包会是的函数中的变量都被保存到内存中,滥用闭包很容易造成内存消耗过大,导致网页性能问题。解决方法是在退出函数之前，将不再使用的局部变量全部删除。
-- 闭包可以使得函数内部的值可以在函数外部进行修改。所以，如果你把父函数当作对象(object)使用，把闭包当作它的公用方法(Public Method)，把内部变量当作它的私有属性(private value)，这时一定要小心，不要随便改变父函数内部变量的值。
+## Disadvantages of closures
+Closures are indeed useful, but there are also some disadvantages:
+- Closures can lead to memory leaks because they persist in memory until no other variables point to them.
+- Closures can cause memory consumption to become excessive because all variables in the function are stored in memory, leading to performance issues on web pages. The solution is to delete all local variables that are no longer needed before exiting the function.
+- Closures allow the values of variables inside functions to be modified from outside the function. Therefore, if you use the outer function as an object and closures as its public methods, and internal variables as private values, you must be careful not to randomly change the values of variables inside the outer function.
