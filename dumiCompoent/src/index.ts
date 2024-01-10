@@ -8,3 +8,4 @@ export { default as Sound } from './Sound';
 export { default as ListTel } from './ListTel';
 export { default as TableTel } from './TableTel';
 export { default as WasInput } from './WasInput';
+export { default as Error } from './Error';
