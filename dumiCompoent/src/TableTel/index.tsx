@@ -13,6 +13,7 @@ interface IAppProps<RecordType = unknown> {
   components?: TableComponents<RecordType>;
   getPopupContainer?: (triggerNode: HTMLElement) => HTMLElement;
   rowKey?: GetRowKey<any>;
+  rowSelection?: any;
   rowClassName?: RowClassName<RecordType>;
   pageSizeOptions?: string[];
   defaultPageSize?:number
