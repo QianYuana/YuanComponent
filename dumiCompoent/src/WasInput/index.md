@@ -133,7 +133,7 @@ const App: React.FC = () => {
       total={data.length}
       children={<p>自定义模块，一般放搜索模块</p>}
       onChange={(page: number, pageSize: number) => {
-        console.log(page, pageSize,'控制分页数据');
+        console.log(page, pageSize,'外层分页');
       }
   }
     />
