@@ -7,3 +7,4 @@ export { default as ReleaseSelect } from './ReleaseSelect';
 export { default as Sound } from './Sound';
 export { default as ListTel } from './ListTel';
 export { default as TableTel } from './TableTel';
+export { default as WasInput } from './WasInput';
