@@ -61,6 +61,7 @@ export default App;
 | className | Style class name | string | - |
 | style | Inline style | CSSProperties | - |
 | defaultActiveKey | Default active key | string[] | - |
+| bordered | Whether to display a border | boolean | true |
 
 ## Precautions
 

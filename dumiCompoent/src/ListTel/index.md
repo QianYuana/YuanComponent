@@ -63,6 +63,7 @@ export default App;
 | className | 样式类名 | string        | -      |
 | style     | 内联样式 | CSSProperties | -      |
 | defaultActiveKey | 默认展开的 key | string[] | [] |
+| bordered | 是否显示边框 | boolean | true |
 
 ## 注意事项
 
