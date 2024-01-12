@@ -15,10 +15,7 @@ const TagTel: React.FunctionComponent<IAppProps> = (props) => {
       marginTop:10,
     }}
     closable
-    onClose={e => {
-      e.preventDefault();
-      props.onremove();
-    }}
+    onClose={props.onremove}
   >
     <span style={{display: "inline-block" ,alignItems: "center",lineHeight:'24px'}}>
       <span onClick={props.onSwitch}>{props.icon}&nbsp;&nbsp;</span>
