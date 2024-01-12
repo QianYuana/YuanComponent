@@ -29,7 +29,7 @@ const App: React.FC = () => {
     <TagTel
       title="库存调成"
       icon={<ArrowUpOutlined style={{ color: 'rgba(112, 182, 3, 1)' }} />}
-      onRemove={(e) => {
+      onremove={(e) => {
         console.log(e);
       }}
     ></TagTel>
