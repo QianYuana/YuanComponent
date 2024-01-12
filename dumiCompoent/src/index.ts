@@ -10,3 +10,5 @@ export { default as TableTel } from './TableTel';
 export { default as WasInput } from './WasInput';
 export { default as Error } from './Error';
 export { default as InputNumber } from './InputNumber';
+export { default as TagTel } from './TagTel';
+// export { default as RuleSelect } from './RuleSelect';
