@@ -17,7 +17,7 @@ function ModalList(props: any) {
         title={props.data.title}
         onCancel={() => props.onCancel()}
         footer={null}
-        width={450}
+        width={520}
       >
         <Form
           layout={props.data.layout}
