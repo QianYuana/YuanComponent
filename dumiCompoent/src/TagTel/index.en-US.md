@@ -1,6 +1,6 @@
 ---
 toc: content
-order: 9
+order: 11
 group:
   title: Components
   
@@ -9,29 +9,74 @@ nav:
   path: /components
 ---
 
-# 404
+# TagTel
 
 ## Introduction
 
-Accumulate some 404 pages and use them directly when you want to use them
+In work, it may be necessary to traverse many tags, and a component needs to be sealed to directly pass data, which is convenient to use.
 
 ## Code Demonstration
 
 ### Basic Usage
 
-```jsx
+```tsx
 import * as React from 'react';
-import { useState } from 'react';
-import { Error } from 'dumiCompoent';
+import { TagTel } from 'dumiCompoent';
+import { ArrowUpOutlined } from '@ant-design/icons';
 
 const App: React.FC = () => {
   return (
-    <Error/>
+    <TagTel
+      title="库存调成"
+      icon={<ArrowUpOutlined style={{ color: 'rgba(112, 182, 3, 1)' }} />}
+      onremove={(e) => {
+        console.log(e);
+      }}
+    ></TagTel>
   );
 };
 export default App;
 ```
+### Change icon
+```tsx
+import  React ,{useState} from 'react';
+import { TagTel } from 'dumiCompoent';
+import { ArrowUpOutlined,ArrowDownOutlined } from '@ant-design/icons';
 
+const App: React.FC = () => {
+  const [Lifting,setLifting]=useState("asc");
+  return (
+    <TagTel
+      title="库存调成"
+      onremove={(e) => {
+        console.log(e);
+      }}
+      icon={
+        Lifting == "asc" ? (
+          <ArrowUpOutlined style={{ color: "rgba(112, 182, 3, 1)",fontWeight: "700" ,fontSize:14}} />
+        ) : (
+          <ArrowDownOutlined
+            style={{ color: "rgba(2, 167, 240, 1)" ,fontWeight: "700",fontSize:14 }}
+          />
+        )
+      }
+      onSwitch={() => {
+        let arr =Lifting == "asc" ? "desc" : "asc";
+        setLifting(arr);
+      }}
+    ></TagTel>
+  );
+};
+export default App;
+```
+### API
+
+| Parameter | Description | Type | Default Value |
+| --- | --- | --- | --- |
+| title | Title | string | - |
+| icon | Icon | ReactNode | - |
+| onRemove | Click to delete callback | (e: MouseEvent) => void | - |
+| onSwitch | Switch button callback | () => void | - |
 
 ## Finally
 

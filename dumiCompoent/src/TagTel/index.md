@@ -38,13 +38,48 @@ const App: React.FC = () => {
 export default App;
 ```
 
+### 更改 icon
+
+```tsx
+import  React ,{useState} from 'react';
+import { TagTel } from 'dumiCompoent';
+import { ArrowUpOutlined,ArrowDownOutlined } from '@ant-design/icons';
+
+const App: React.FC = () => {
+  const [Lifting,setLifting]=useState("asc");
+  return (
+    <TagTel
+      title="库存调成"
+      onremove={(e) => {
+        console.log(e);
+      }}
+      icon={
+        Lifting == "asc" ? (
+          <ArrowUpOutlined style={{ color: "rgba(112, 182, 3, 1)",fontWeight: "700" ,fontSize:14}} />
+        ) : (
+          <ArrowDownOutlined
+            style={{ color: "rgba(2, 167, 240, 1)" ,fontWeight: "700",fontSize:14 }}
+          />
+        )
+      }
+      onSwitch={() => {
+        let arr =Lifting == "asc" ? "desc" : "asc";
+        setLifting(arr);
+      }}
+    ></TagTel>
+  );
+};
+export default App;
+```
+
 ## API
 
-| 参数 | 说明 | 类型 | 默认值 |
-| :--- | :--- | :--- | :--- |
-| title | 标题 | string | - |
-| icon | 图标 | ReactNode | - |
-| onRemove | 点击删除回调 | (e: MouseEvent) => void | - |
+| 参数     | 说明         | 类型                    | 默认值 |
+| :------- | :----------- | :---------------------- | :----- |
+| title    | 标题         | string                  | -      |
+| icon     | 图标         | ReactNode               | -      |
+| onRemove | 点击删除回调 | (e: MouseEvent) => void | -      |
+| onSwitch | 切换按钮回调 | () => void              | -      |
 
 ## 最后
 
