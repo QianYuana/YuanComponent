@@ -110,10 +110,16 @@ export default App;
 
 | 参数 | 说明 | 类型 | 默认值 |
 | :--- | :--- | :--- | :--- |
-| title | 标题 | string | - |
-| icon | 图标 | ReactNode | - |
-| onRemove | 点击删除回调 | (e: MouseEvent) => void | - |
+| options | 选项列表 | Array | [] |
+| modalop | 弹窗配置 | Object | {} |
+| modalSelect | 选择列表 | Array | [] |
 
+## 注意事项
+
+- `modalop` 配置项，用于配置弹窗的配置
+- `modalSelect` 配置项，用于配置弹窗的配置
+- `modalop` 配置项，`listData` 配置项，`render` 配置项，用于配置弹窗的配置
+- 具体场景需要看业务需要，大概是这样，使用具体在源码进行更改。
 ## 最后
 
 如果您觉得不错，可以点击右上角**Star**支持一下，谢谢。
