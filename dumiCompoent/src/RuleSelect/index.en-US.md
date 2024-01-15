@@ -106,6 +106,20 @@ const App: React.FC = () => {
 export default App;
 ```
 
+## API
+
+| Parameter | Description | Type | Default Value |
+| --- | --- | --- | --- |
+| options | The data source of the component | Array | [] |
+| modalop | The modal configuration of the component | Object | {} |
+| modalSelect | The data source of the modal component | Array | [] |
+
+## Precautions
+
+- 'modalop' configuration item, used to configure the pop-up window configuration
+- 'modalSelect' configuration item, used to configure the pop-up window configuration
+- The 'modalop' configuration item, the 'listData' configuration item, and the 'render' configuration item are used to configure the pop-up window configuration
+- The specific scenario depends on business needs. It is roughly like this, and the specific changes are made in the source code.
 
 ## Finally
 
