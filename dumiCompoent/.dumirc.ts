@@ -2,6 +2,13 @@ import { defineConfig } from 'dumi';
 
 export default defineConfig({
   outputPath: 'docs-dist',
+  resolve: {
+    // 设置横向导航栏  
+    atomDirs: [
+      { type: 'components', dir: 'src/Components' }, // 组件导航
+      { type: 'Hooks', dir: 'src/Hooks' } // hooks导航
+    ]
+  },
   themeConfig: {
     name: 'QianYuan X',
     prefersColor: { switch: true },
@@ -49,11 +56,11 @@ export default defineConfig({
   box-sizing: border-box;
   overflow: auto;
 }`,
-`.dumi-default-features[data-cols='2'] > .dumi-default-features-item {
+    `.dumi-default-features[data-cols='2'] > .dumi-default-features-item {
   width: 25% !important;
   text-align: center;
 }`,
-`.dumi-default-features[data-cols='2'] > .dumi-default-features-item:nth-child(odd) {
+    `.dumi-default-features[data-cols='2'] > .dumi-default-features-item:nth-child(odd) {
   margin-inline-end: 0 !important; 
 }`, `/less/index.less`],
 });
