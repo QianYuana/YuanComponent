@@ -28,6 +28,8 @@ interface IAppProps extends Table {
   columns?: any[];
   dataSource?: object[];
   onChange?: (page: number, pageSize: number) => void  | void;
+  onvalue?:(value:any)=>void;
+  value?:any;
 }
 
 const App: React.FunctionComponent<IAppProps> = (props) => {
@@ -35,7 +37,7 @@ const App: React.FunctionComponent<IAppProps> = (props) => {
   const [maxRows, setmaxRows] = useState(props.maxRows || 10); //最大行数
   const [openText, setOpenText] = useState<boolean>(false); //是否打开文本框
   const [isModalOpen, setIsModalOpen] = useState(false); //是否打开弹窗
-  const [inputVal, setinputVal] = useState<string>(""); //文本框的值
+  const [inputVal, setinputVal] = useState<string>(props.value || ""); //文本框的值
   const [textVal, settextVal] = useState<string>(""); //多行文本框的值
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]); //表格选中的行
 
@@ -103,10 +105,11 @@ const App: React.FunctionComponent<IAppProps> = (props) => {
     selectedRowKeys,
     onChange: onSelectChange,
   };
-  useEffect(() => {
-    console.log(props);
-    
-  }, []);
+  useEffect(()=>{    
+    if (Object.keys(props).includes('onvalue')) {
+        props.onvalue(inputVal);
+    }
+  },[inputVal])
   return (
     <div style={{ position: "relative" }}>
       <Input
