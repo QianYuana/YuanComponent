@@ -8,7 +8,14 @@ nav:
 ---
 
 # useFocus 
+## Introduction
 
+`UseFocus` is a `Hooks` used to determine whether the current click position is within a specified area, which can be used to determine whether the click position is within a specified area, thereby achieving some functions.
+In our work, we often encounter focal events, and because they are difficult to handle, we encapsulate them. We welcome everyone to use `useFocus` to handle focal events.
+
+## Code Demo
+
+### Basic Usage
 ```tsx
 import React, { useEffect, useState, useRef } from 'react';
 import useFocus from './index.tsx';
@@ -38,3 +45,6 @@ const App: React.FunctionComponent = () => {
 
 export default App;
 ```
+## Finally
+
+If you think it's good, you can click the "Star" button on the top right to support it, thank you.
