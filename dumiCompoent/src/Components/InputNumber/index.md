@@ -22,15 +22,15 @@ nav:
 ```tsx
 import * as React from 'react';
 import { InputNumber } from 'dumiCompoent';
-import { message} from 'antd';
+import { message } from 'antd';
 
 const App: React.FC = () => {
   return (
     <InputNumber
       style={{ width: '180px' }}
-      onChange={(e: any) => {
+      onChanges={(e: any) => {
         if (e > 100) {
-          message.destroy()
+          message.destroy();
           message.error('超出最大数量100');
           return Promise.reject();
         }
@@ -42,15 +42,46 @@ const App: React.FC = () => {
 };
 export default App;
 ```
+
+### 在表单中的用法
+
+```tsx
+import * as React from 'react';
+import { InputNumber } from 'dumiCompoent';
+import { message,Form } from 'antd';
+
+const App: React.FC = () => {
+  return (
+    <Form>
+      <Form.Item label="排序号" name="sort">
+        <InputNumber
+          placeholder="请输入排序号"
+          style={{ width: '180px' }}
+          onChanges={(val) => {
+            if (val < 0) {
+              message.destroy();
+              message.error('排序号必须大于0');
+              return Promise.reject();
+            }
+            return Promise.resolve(val);
+          }}
+        />
+      </Form.Item>
+    </Form>
+  );
+};
+export default App;
+```
+
 ## API
 
-| 参数 | 说明 | 类型 | 默认值 |
-| :--- | :--- | :--- | :--- |
-| value | 输入框的值 | number | '' |
-| defaultValue | 输入框的默认值 | number | '' |
-| onChange | 输入框的值变化时触发的回调函数 | (value: number) => void | - |
-| placeholder | 输入框的占位符 | string | '' |
-| disabled | 禁用 | boolean | false |
+| 参数         | 说明                           | 类型                    | 默认值 |
+| :----------- | :----------------------------- | :---------------------- | :----- |
+| value        | 输入框的值                     | number                  | ''     |
+| defaultValue | 输入框的默认值                 | number                  | ''     |
+| onChange     | 输入框的值变化时触发的回调函数 | (value: number) => void | -      |
+| placeholder  | 输入框的占位符                 | string                  | ''     |
+| disabled     | 禁用                           | boolean                 | false  |
 
 ## 注意事项
 

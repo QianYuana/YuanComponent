@@ -1,20 +1,27 @@
 
 import { Input } from 'antd';
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 
 interface IProps {
     value: any;
-    onChange: (value: any) => Promise<void>;
+    onChanges: (value: any) => Promise<void>;
     placeholder?: string;
+    style?:any;
+    onChange?:(value:any)=>void;
 }
 const App: React.FC<IProps> = (props) =>{
     const [state, setState] = useState(props.value || null);
 
 const onChange = (e: any) => {
-    props.onChange(e.target.value).then((value) => {
+    props.onChanges(e.target.value).then((value) => {
         setState(value);
-    });
+    })
 };
+useEffect(()=>{
+    if (state !== null) {
+        props.onChange(state)
+    }
+},[state])
     return <Input type = "number" {...props}  value={state} onChange={onChange} placeholder={props.placeholder || "请输入"} />;
 } 
 
