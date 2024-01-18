@@ -20,66 +20,45 @@ nav:
 ### 基础用法
 
 ```tsx
-import * as React from 'react';
-import { TagTel } from 'dumiCompoent';
-import { ArrowUpOutlined } from '@ant-design/icons';
+import React, { useState } from 'react';
+import { DragTel, TagTel } from 'dumiCompoent';
 
 const App: React.FC = () => {
+  const [list, setlist] = useState<{ id: string; value: string }[]>([
+    { id: '123121231', value: 'Jack' },
+    { id: '345345', value: 'Join' },
+    { id: '2312', value: 'xiaohong' },
+    { id: '7867', value: 'ming' },
+  ]);
   return (
-    <TagTel
-      title="库存调成"
-      icon={<ArrowUpOutlined style={{ color: 'rgba(112, 182, 3, 1)' }} />}
-      onremove={(e) => {
-        console.log(e);
-      }}
-    ></TagTel>
+    <div className="down" style={{ display: 'flex', alignItems: 'center' }}>
+      <DragTel
+        list={list}
+        onChange={(items) => {
+          console.log(items, 'dnd');
+          setlist(items);
+        }}
+      />
+    </div>
   );
 };
 export default App;
 ```
 
-### 更改 icon
-
-```tsx
-import  React ,{useState} from 'react';
-import { TagTel } from 'dumiCompoent';
-import { ArrowUpOutlined,ArrowDownOutlined } from '@ant-design/icons';
-
-const App: React.FC = () => {
-  const [Lifting,setLifting]=useState("asc");
-  return (
-    <TagTel
-      title="库存调成"
-      onremove={(e) => {
-        console.log(e);
-      }}
-      icon={
-        Lifting == "asc" ? (
-          <ArrowUpOutlined style={{ color: "rgba(112, 182, 3, 1)",fontWeight: "700" ,fontSize:14}} />
-        ) : (
-          <ArrowDownOutlined
-            style={{ color: "rgba(2, 167, 240, 1)" ,fontWeight: "700",fontSize:14 }}
-          />
-        )
-      }
-      onSwitch={() => {
-        let arr =Lifting == "asc" ? "desc" : "asc";
-        setLifting(arr);
-      }}
-    ></TagTel>
-  );
-};
-export default App;
-```
 
 ## API
 
 | 参数     | 说明         | 类型                    | 默认值 |
 | :------- | :----------- | :---------------------- | :----- |
-| title    | 标题         | string                  | -      |
-| icon     | 图标         | ReactNode               | -      |
-| onRemove | 点击删除回调 | (e: MouseEvent) => void | -      |
-| onSwitch | 切换按钮回调 | () => void              | -      |
+| list     | 需要拖拽的数组 | Array<{ id: string; value: string }> | []     |
+| onChange | 拖拽完成后的回调 | (items: Array<{ id: string; value: string }>) => void | -      |
+
+## 注意事项
+
+- 组件内部使用了 `TagTel`，当自己开发的时候需要把源码内部的组件换成需要拖拽的组件，例如 `TagTel`。
+- 拖拽完成后的回调会返回拖拽完成后的数组，记得更新一下`list`数组.
+- 如果需要自定义组件，请把源码内部的组件换成需要拖拽的组件，例如 `TagTel`。
+- 最重要的一点你的数据中必须包含 `id` 这个字段，因为内部使用了 `id` 来判断是否是同一个元素。
 
 ## 最后
 
