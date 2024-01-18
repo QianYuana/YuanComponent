@@ -7,7 +7,7 @@ interface IAppProps {
   children?: React.ReactNode;
 }
 
-const TagTel: React.FunctionComponent<IAppProps> = (props) => {
+const Item: React.FunctionComponent<IAppProps> = (props) => {
   const { id } = props;
   const { attributes, listeners, setNodeRef, transform, transition } =
     useSortable({ id: id });
@@ -19,4 +19,4 @@ const TagTel: React.FunctionComponent<IAppProps> = (props) => {
   );
 };
 
-export default TagTel;
+export default Item;
