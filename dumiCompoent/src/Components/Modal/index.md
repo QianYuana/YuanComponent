@@ -234,6 +234,9 @@ export default App
 | onFinish | 点击确定回调   | function(e) | -      |
 | onCancel | 点击取消回调   | function(e) | -      |
 | loading  | 加载状态       | boolean     | false  |
+| isloading  | 弹窗是否显示加载状态 | boolean     | false    |
+| style      | 对话框样式                                                           | Object    | -          |
+| width      | 宽度                                                                 | number    | 520        |
 
 ### data
 
