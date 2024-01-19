@@ -1,24 +1,25 @@
-import { Button, Form, Modal } from 'antd';
+import { Button, Form, Modal, Spin } from 'antd';
 import React, { useEffect, useState } from 'react';
 import './main.css';
 function ModalList(props: any) {
-  const { open, loading } = props;
+  const { open, loading, isloading } = props;
   const [List, setList] = useState([]);
   const [form] = Form.useForm();
   useEffect(() => {
     setList(props.data.listData);
   }, [props]);
-  const onFinish = (values: any) => {
+  const onFinish = (values: any): any => {
     props.onFinish(values);
   };
   return (
-      <Modal
-        open={open}
-        title={props.data.title}
-        onCancel={() => props.onCancel()}
-        footer={null}
-        width={520}
-      >
+    <Modal
+      open={open}
+      title={props.data.title}
+      onCancel={() => props.onCancel()}
+      footer={null}
+      width={props.data.width || 520}
+    >
+      <Spin tip="Loading..." spinning={isloading || false}>
         <Form
           layout={props.data.layout}
           initialValues={props.data.initialValues}
@@ -26,8 +27,14 @@ function ModalList(props: any) {
           onFinish={onFinish}
         >
           {List &&
-            List.map(({ label, name, render , rules}, index) => (
-              <Form.Item label={label} name={name} key={index} rules={rules || []}>
+            List.map(({ label, name, render, rules, style }, index) => (
+              <Form.Item
+                label={label}
+                name={name}
+                key={index}
+                rules={rules || []}
+                style={style || {}}
+              >
                 {render}
               </Form.Item>
             ))}
@@ -42,7 +49,8 @@ function ModalList(props: any) {
             </div>
           </Form.Item>
         </Form>
-      </Modal>
+      </Spin>
+    </Modal>
   );
 }
 
