@@ -13,3 +13,4 @@ export { default as InputNumber } from './Components/InputNumber';
 export { default as TagTel } from './Components/TagTel';
 export { default as RuleSelect } from './Components/RuleSelect';
 export { default as DragTel } from './Components/DragTel';
+export { default as DataSelect } from './Components/DataSelect';
