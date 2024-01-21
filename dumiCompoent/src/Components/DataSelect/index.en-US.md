@@ -9,7 +9,7 @@ nav:
   path: /components
 ---
 
-# InputNumber
+# DataSelect
 
 ## Introduction
 
