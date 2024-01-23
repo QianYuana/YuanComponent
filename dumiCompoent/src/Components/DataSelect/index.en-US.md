@@ -13,9 +13,7 @@ nav:
 
 ## Introduction
 
-The type of component for digital input boxes is the most common one used in work. However, controlling and limiting the input is often the most troublesome. This has been packaged for you already. You only need to pass an `onChanges` event, and then control it inside.  
-
-The previously used `onChange` event now needs to support real-time retrieval of input box values in the form state. The `onChange` event is modified to only trigger `form` events, and control needs to be done in the `onChanges` event.
+In work, many dropdown boxes are not fixed in value but are provided by a certain data source, so we need to process the data into a dropdown box data source. Therefore, DataSelect is a component developed to solve this problem.
 
 ## Code Demonstration
 
@@ -24,22 +22,21 @@ The previously used `onChange` event now needs to support real-time retrieval of
 
 ```tsx
 import * as React from 'react';
-import { InputNumber } from 'dumiCompoent';
-import { message} from 'antd';
+import { DataSelect } from 'dumiCompoent';;
 
 const App: React.FC = () => {
+  const options = [
+    { code: '1', name: '1号楼' },
+    { code: '2', name: '2号楼' },
+    { code: '3', name: '3号楼' },
+    { code: '4', name: '4号楼' },
+  ];
   return (
-    <InputNumber
-      style={{ width: '180px' }}
-      onChange={(e: any) => {
-        if (e > 100) {
-          message.destroy()
-          message.error('超出最大数量100');
-          return Promise.reject();
-        }
-        return Promise.resolve(e);
+    <DataSelect
+      option={options}
+      onChange={(val) => {
+        console.log(val);
       }}
-      value={''}
     />
   );
 };
