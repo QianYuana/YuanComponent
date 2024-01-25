@@ -46,25 +46,21 @@ export default App;
 
 ```tsx
 import * as React from 'react';
-import { InputNumber } from 'dumiCompoent';
-import { message,Form } from 'antd';
+import { DataSelect } from 'dumiCompoent';
+import { Form } from 'antd';
 
 const App: React.FC = () => {
+  const options = [
+    { code: '1', name: '1号楼' },
+    { code: '2', name: '2号楼' },
+    { code: '3', name: '3号楼' },
+    { code: '4', name: '4号楼' },
+  ];
+
   return (
     <Form>
-      <Form.Item label="排序号" name="sort">
-        <InputNumber
-          placeholder="请输入排序号"
-          style={{ width: '180px' }}
-          onChanges={(val) => {
-            if (val < 0) {
-              message.destroy();
-              message.error('排序号必须大于0');
-              return Promise.reject();
-            }
-            return Promise.resolve(val);
-          }}
-        />
+      <Form.Item label="楼号" name="sort">
+        <DataSelect option={options} />
       </Form.Item>
     </Form>
   );
@@ -76,13 +72,8 @@ export default App;
 
 | Parameter | Explanation | Type | Default Value |
 | :--- | :--- | :--- | :--- |
-| value | The value of the input box. | number | '' |
-| defaultValue | The default value of the input box. | number | '' |
-| onChange | The callback function triggered when the value of the Form box changes. | (value: number) => void | - |
-| onChanges | The callback function triggered when the value of the input box changes. | (value: number) => void | - |
-| placeholder | The placeholder of the input box. | string | '' |
-| disabled | Whether to disable the input box. | boolean | false |
-
+| option | Dropdown box data source | Array | - |
+| onChange | Callback function when the value changes | Function | - |
 ## Precautions
 
 - This component is based on the `Input` component of `antd`, so all the properties of `Input` can be used directly.
