@@ -76,7 +76,7 @@ export default App;
 | onChange | Callback function when the value changes | Function | - |
 ## Precautions
 
-- This component is based on the `Input` component of `antd`, so all the properties of `Input` can be used directly.
+- When using this component, the page needs to first request data to prevent users from making choices and resulting in no data.
 
 ## Finally
 
