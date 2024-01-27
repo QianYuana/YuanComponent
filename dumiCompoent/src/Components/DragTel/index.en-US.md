@@ -73,10 +73,8 @@ export default App;
 
 | Parameter | Description | Type | Default Value |
 | --- | --- | --- | --- |
-| title | Title | string | - |
-| icon | Icon | ReactNode | - |
-| onRemove | Click to delete callback | (e: MouseEvent) => void | - |
-| onSwitch | Switch button callback | () => void | - |
+| list     | 需要拖拽的数组 | Array<{ id: string; value: string }> | []     |
+| onChange | 拖拽完成后的回调 | (items: Array<{ id: string; value: string }>) => void | -      |
 
 ## 注意事项
 
