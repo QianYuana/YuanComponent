@@ -13,7 +13,7 @@ nav:
 
 ## Introduction
 
-In work, it may be necessary to traverse many tags, and a component needs to be sealed to directly pass data, which is convenient to use.
+There are many scenarios in the project that require dropdown queries, such as search boxes, dropdown selection boxes, etc. These scenarios are when users are searching for data and do not know what data the system has, so they need to create a dropdown fuzzy query component. When the user inputs a character that does not match the character in the list, the following will prompt that there is currently no data. If there is a match, the fuzzy query data will appear.
 
 ## Code Demonstration
 
