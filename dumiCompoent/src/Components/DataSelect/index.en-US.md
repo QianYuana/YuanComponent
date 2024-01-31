@@ -22,7 +22,7 @@ In work, many dropdown boxes are not fixed in value but are provided by a certai
 
 ```tsx
 import * as React from 'react';
-import { DataSelect } from 'dumiCompoent';;
+import { DataSelect } from 'QianYuanX';;
 
 const App: React.FC = () => {
   const options = [
@@ -46,7 +46,7 @@ export default App;
 
 ```tsx
 import * as React from 'react';
-import { DataSelect } from 'dumiCompoent';
+import { DataSelect } from 'QianYuanX';
 import { Form } from 'antd';
 
 const App: React.FC = () => {

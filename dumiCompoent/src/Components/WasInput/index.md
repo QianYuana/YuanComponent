@@ -23,7 +23,7 @@ WasInput 输入加选择输入框最大的功能就是可以使用多行文本�
 ```tsx
 import * as React from 'react';
 import { useState } from 'react';
-import { WasInput } from 'dumiCompoent';
+import { WasInput } from 'QianYuanX';
 import type { ColumnsType } from 'antd/es/table';
 
 interface DataType {
@@ -146,7 +146,7 @@ export default App;
 ```tsx
 import * as React from 'react';
 import { useState } from 'react';
-import { WasInput } from 'dumiCompoent';
+import { WasInput } from 'QianYuanX';
 import type { ColumnsType } from 'antd/es/table';
 
 interface DataType {

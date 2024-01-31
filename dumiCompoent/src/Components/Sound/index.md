@@ -19,7 +19,7 @@ nav:
 ### 基础用法
 
 ```jsx
-import { Sound } from 'dumiCompoent';
+import { Sound } from 'QianYuanX';
 import { Form } from 'antd';
 import React, { useState } from 'react';
 

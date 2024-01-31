@@ -20,7 +20,7 @@ In our work, we will make some prompt sounds, and we need to monitor and control
 ### Basic Usage
 
 ```jsx
-import { Sound } from 'dumiCompoent';
+import { Sound } from 'QianYuanX';
 import { Form } from 'antd';
 import React, { useState } from 'react';
 
@@ -54,7 +54,7 @@ export default () => {
 ### Non Control Usage
 
 ```jsx
-import { ReleaseSelect } from 'dumiCompoent';
+import { ReleaseSelect } from 'QianYuanX';
 import React, { useState } from 'react';
 
 export default () => {

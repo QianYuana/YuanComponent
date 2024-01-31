@@ -17,7 +17,7 @@ modal 注入 form 组件，在使用过程中，注意 render 的组件是受控
 ### 基础用法
 
 ```jsx
-import { ModalList } from 'dumiCompoent';
+import { ModalList } from 'QianYuanX';
 import { Collapse, Form, Button, message, Input } from 'antd';
 import React, { useState } from 'react';
 
@@ -76,7 +76,7 @@ export default () => {
 ### 规则校验
 
 ```jsx
-import { ModalList } from 'dumiCompoent';
+import { ModalList } from 'QianYuanX';
 import {  Button, Input } from 'antd';
 import React, { useState } from 'react';
 
@@ -147,7 +147,7 @@ export default () => {
 ### 多行文本
 
 ```jsx
-import { ModalList } from 'dumiCompoent';
+import { ModalList } from 'QianYuanX';
 import {Button,Input } from 'antd';
 import React, { useState } from 'react';
 const { TextArea } = Input;
