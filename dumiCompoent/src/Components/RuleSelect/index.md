@@ -21,7 +21,7 @@ nav:
 
 ```tsx
 import * as React from 'react';
-import { RuleSelect } from 'dumiCompoent';
+import { RuleSelect } from 'QianYuanX';
 import { ArrowUpOutlined } from '@ant-design/icons';
 import { Select } from "antd";
 

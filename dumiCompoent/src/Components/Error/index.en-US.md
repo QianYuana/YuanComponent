@@ -22,7 +22,7 @@ Accumulate some 404 pages and use them directly when you want to use them
 ```jsx
 import * as React from 'react';
 import { useState } from 'react';
-import { Error } from 'dumiCompoent';
+import { Error } from 'QianYuanX';
 
 const App: React.FC = () => {
   return (

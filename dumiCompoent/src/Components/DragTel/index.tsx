@@ -12,7 +12,7 @@ import {
   horizontalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import Item from "./item";
-import { TagTel } from 'dumiCompoent';
+import { TagTel } from 'QianYuanX';
 
 interface IAppProps {
   list: any;

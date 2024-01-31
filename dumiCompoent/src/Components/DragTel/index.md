@@ -21,7 +21,7 @@ nav:
 
 ```tsx
 import React, { useState } from 'react';
-import { DragTel, TagTel } from 'dumiCompoent';
+import { DragTel, TagTel } from 'QianYuanX';
 
 const App: React.FC = () => {
   const [list, setlist] = useState<{ id: string; value: string }[]>([

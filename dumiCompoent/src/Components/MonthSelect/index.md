@@ -20,7 +20,7 @@ nav:
 ### 基础用法
 
 ```jsx
-import { MonthSelect } from 'dumiCompoent';
+import { MonthSelect } from 'QianYuanX';
 import { Form } from 'antd';
 import React, { useState } from 'react';
 
@@ -37,7 +37,7 @@ export default () => {
 ### changTime取值
 
 ```jsx
-import { MonthSelect } from 'dumiCompoent';
+import { MonthSelect } from 'QianYuanX';
 import { Form } from 'antd';
 import React, { useState } from 'react';
 

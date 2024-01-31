@@ -20,7 +20,7 @@ The date component is based on work requirements and is not available in antd, s
 ### Basic Usage
 
 ```jsx
-import { TimeSelect } from 'dumiCompoent';
+import { TimeSelect } from 'QianYuanX';
 import { Form } from 'antd';
 import React, { useState } from 'react';
 

@@ -21,7 +21,7 @@ The `RuleSelect` component is used to implement addition and deletion based on m
 
 ```jsx
 import * as React from 'react';
-import { RuleSelect } from 'dumiCompoent';
+import { RuleSelect } from 'QianYuanX';
 import { ArrowUpOutlined } from '@ant-design/icons';
 import { Select } from "antd";
 

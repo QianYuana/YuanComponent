@@ -1,9 +1,13 @@
 {
-  "name": "dumiCompoent",
+  "name": "qianyuanx",
   "version": "0.0.1",
-  "description": "A react library developed with dumi",
+  "description": "基于Antd 4.x的资源库，用于React开发的组件库",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/QianYuana/YuanComponent.git"
+  },
   "scripts": {
     "start": "npm run dev",
     "dev": "dumi dev",
@@ -17,7 +21,7 @@
     "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
     "prepublishOnly": "father doctor && npm run build"
   },
-  "authors": [],
+  "authors": ["QianYuan"],
   "license": "MIT",
   "files": [
     "dist"

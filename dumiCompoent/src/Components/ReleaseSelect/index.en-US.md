@@ -19,7 +19,7 @@ Allows selection of a specific date or a number of days in the future. This comp
 ### Basic Usage
 
 ```jsx
-import { ReleaseSelect } from 'dumiCompoent';
+import { ReleaseSelect } from 'QianYuanX';
 import { Form } from 'antd';
 import React, { useState } from 'react';
 
@@ -37,7 +37,7 @@ export default () => {
 ### Non Control Usage
 
 ```jsx
-import { ReleaseSelect } from 'dumiCompoent';
+import { ReleaseSelect } from 'QianYuanX';
 import React, { useState } from 'react';
 
 export default () => {

@@ -21,7 +21,7 @@ nav:
 
 ```tsx
 import React, { useState } from 'react';
-import { DebounceSelect } from 'dumiCompoent';
+import { DebounceSelect } from 'QianYuanX';
 
 const App: React.FC = () => {
   const [list, setlist] = useState<{ id: string; value: string }[]>([

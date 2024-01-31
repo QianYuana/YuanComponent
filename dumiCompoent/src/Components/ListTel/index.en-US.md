@@ -20,7 +20,7 @@ The list template has been extracted for ease of use as it is frequently used in
 ### Basic Usage
 
 ```tsx
-import { ListTel } from 'dumiCompoent';
+import { ListTel } from 'QianYuanX';
 
 const App: React.FC = () => {
   return (
@@ -35,7 +35,7 @@ export default App;
 ### Customize default deployment
 
 ```tsx
-import { ListTel } from 'dumiCompoent';
+import { ListTel } from 'QianYuanX';
 
 const App: React.FC = () => {
   return (

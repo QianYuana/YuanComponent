@@ -22,7 +22,7 @@ nav:
 ```tsx
 import * as React from "react";
 import { useState } from "react";
-import { TableTel } from 'dumiCompoent';
+import { TableTel } from 'QianYuanX';
 import type { ColumnsType } from "antd/es/table";
 
 interface DataType {
@@ -142,7 +142,7 @@ export default App;
 ```tsx
 import * as React from "react";
 import { useState } from "react";
-import { TableTel } from 'dumiCompoent';
+import { TableTel } from 'QianYuanX';
 import type { ColumnsType } from "antd/es/table";
 
 interface DataType {

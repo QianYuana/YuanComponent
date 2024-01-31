@@ -23,7 +23,7 @@ The maximum function of WasInput input and select input box is that it can use m
 ```tsx
 import * as React from 'react';
 import { useState } from 'react';
-import { WasInput } from 'dumiCompoent';
+import { WasInput } from 'QianYuanX';
 import type { ColumnsType } from 'antd/es/table';
 
 interface DataType {
@@ -147,7 +147,7 @@ export default App;
 ```tsx
 import * as React from 'react';
 import { useState } from 'react';
-import { WasInput } from 'dumiCompoent';
+import { WasInput } from 'QianYuanX';
 import type { ColumnsType } from 'antd/es/table';
 
 interface DataType {

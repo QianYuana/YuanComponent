@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Input, message, Modal, Spin } from "antd";
 import { EllipsisOutlined, AppstoreOutlined } from "@ant-design/icons";
 
-import {TableTel} from "dumiCompoent";
+import {TableTel} from "QianYuanX";
 import { GetRowKey, TableComponents, RowClassName } from "./interface";
 const { TextArea } = Input;
 interface Table<RecordType = unknown> {

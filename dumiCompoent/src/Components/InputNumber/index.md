@@ -23,7 +23,7 @@ nav:
 
 ```tsx
 import * as React from 'react';
-import { InputNumber } from 'dumiCompoent';
+import { InputNumber } from 'QianYuanX';
 import { message } from 'antd';
 
 const App: React.FC = () => {
@@ -49,7 +49,7 @@ export default App;
 
 ```tsx
 import * as React from 'react';
-import { InputNumber } from 'dumiCompoent';
+import { InputNumber } from 'QianYuanX';
 import { message,Form } from 'antd';
 
 const App: React.FC = () => {
