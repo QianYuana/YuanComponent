@@ -17,7 +17,7 @@ Inject the form component into the modal. During use, please note that the rende
 ### Basic usage
 
 ```jsx
-import { ModalList } from 'QianYuanX';
+import { ModalList } from 'qianyuanx';
 import { Collapse, Form, Button, message, Input } from 'antd';
 import React, { useState } from 'react';
 
@@ -76,7 +76,7 @@ export default () => {
 ### Rule validation
 
 ```jsx
-import { ModalList } from 'QianYuanX';
+import { ModalList } from 'qianyuanx';
 import { Button, Input } from 'antd';
 import React, { useState } from 'react';
 
@@ -147,7 +147,7 @@ export default () => {
 ### multiline
 
 ```jsx
-import { ModalList } from 'QianYuanX';
+import { ModalList } from 'qianyuanx';
 import { Button, Input } from 'antd';
 import React, { useState } from 'react';
 const { TextArea } = Input;

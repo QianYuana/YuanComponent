@@ -5,7 +5,7 @@ import {
   ArrowUpOutlined,
   ArrowDownOutlined,
 } from "@ant-design/icons";
-import { TagTel,ModalList } from 'QianYuanX';
+import { TagTel,ModalList } from 'qianyuanx';
 interface IAppProps {
   options: any[];
   modalop: object;

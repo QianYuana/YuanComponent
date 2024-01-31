@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Input, message, Modal, Spin } from "antd";
 import { EllipsisOutlined, AppstoreOutlined } from "@ant-design/icons";
 
-import {TableTel} from "QianYuanX";
+import {TableTel} from "qianyuanx";
 import { GetRowKey, TableComponents, RowClassName } from "./interface";
 const { TextArea } = Input;
 interface Table<RecordType = unknown> {
@@ -27,13 +27,15 @@ interface IAppProps extends Table {
   children?: React.ReactNode;
   columns?: any[];
   dataSource?: object[];
-  onChange?: (page: number, pageSize: number) => void  | void;
-  onvalue?:(value:any)=>void;
+  onChange: (page: number, pageSize: number) => void  | void;
+  onvalue:(value:any)=>void;
   value?:any;
 }
 
 const App: React.FunctionComponent<IAppProps> = (props) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [size, setSize] = useState(props.size || "default"); //图标尺寸
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [maxRows, setmaxRows] = useState(props.maxRows || 10); //最大行数
   const [openText, setOpenText] = useState<boolean>(false); //是否打开文本框
   const [isModalOpen, setIsModalOpen] = useState(false); //是否打开弹窗
@@ -41,9 +43,9 @@ const App: React.FunctionComponent<IAppProps> = (props) => {
   const [textVal, settextVal] = useState<string>(""); //多行文本框的值
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]); //表格选中的行
 
-  const textRef = useRef(null); //文本框的ref
-  const dropRef = useRef(null); //点的ref
-  const divRef = useRef(null);
+  const textRef = useRef<HTMLDivElement>(null); //文本框的ref
+  const dropRef = useRef<HTMLDivElement>(null); //点的ref
+  const divRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleClickOutSide = (e: MouseEvent) => {
@@ -64,7 +66,7 @@ const App: React.FunctionComponent<IAppProps> = (props) => {
     if (openText) {
       console.log(dropRef.current);
 
-      textRef.current.focus();
+      textRef.current?.focus();
     }
   }, [openText]);
 
@@ -130,6 +132,7 @@ const App: React.FunctionComponent<IAppProps> = (props) => {
         value={inputVal}
       />
       <div
+        ref={divRef}
         style={{
           position: "absolute",
           left: 0,
@@ -139,7 +142,6 @@ const App: React.FunctionComponent<IAppProps> = (props) => {
           flexDirection: "column",
           alignItems: "flex-end",
         }}
-        ref={divRef}
       >
         <EllipsisOutlined
           ref={dropRef}

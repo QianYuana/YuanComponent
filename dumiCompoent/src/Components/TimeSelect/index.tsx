@@ -1,11 +1,12 @@
 /* eslint-disable eqeqeq */
 import { DatePicker } from 'antd';
+import type { DatePickerProps } from 'antd';
 import React, { useEffect, useState } from 'react';
 import './main.less';
 
 //封装的日期组件
-const TimeSelect = (props: { onChange: (arg0: never[]) => void; value: any; }) => {
-  const [vals, setvals] = useState([]);
+const TimeSelect = (props: { onChange: (arg0: any[]) => void; value: any; }) => {
+  const [vals, setvals] = useState<any[]>([]);
   useEffect(() => {
     props.onChange(vals);
   }, [vals]);
@@ -18,13 +19,16 @@ const TimeSelect = (props: { onChange: (arg0: never[]) => void; value: any; }) =
   const disabledDate = (current: any) => {
     return current && current < vals[0];
   };
-  const starttimechange = (val: any | never ) => {
+  const starttimechange: DatePickerProps['onChange'] = (date, dateString ) => {
     //Wed Nov 08 2023 09:43:03 GMT+0800 (中国标准时间)
-    vals.splice(0, 1, val);
+    console.log(date,dateString);
+    
+    vals.splice(0, 1, date);
   };
-  const removetimechange = (val: any) => {
+  const removetimechange: DatePickerProps['onChange'] = (date, dateString) => {
     //Wed Nov 08 2023 09:43:03 GMT+0800 (中国标准时间)
-    vals.splice(1, 1, val);
+    console.log(date,dateString);
+    vals.splice(1, 1, date);
   };
 
   return (

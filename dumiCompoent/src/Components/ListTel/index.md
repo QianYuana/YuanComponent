@@ -20,7 +20,7 @@ nav:
 ### 基础用法
 
 ```tsx
-import { ListTel } from 'QianYuanX';
+import { ListTel } from 'qianyuanx';
 
 const App: React.FC = () => {
   return (
@@ -36,7 +36,7 @@ export default App;
 ### 自定义默认展开
 
 ```tsx
-import { ListTel } from 'QianYuanX';
+import { ListTel } from 'qianyuanx';
 
 const App: React.FC = () => {
   return (

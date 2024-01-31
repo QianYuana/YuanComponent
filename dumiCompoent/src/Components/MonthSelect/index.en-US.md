@@ -20,7 +20,7 @@ Custom month component. Note that MonthSelect is a controlled component when usi
 ### Basic Usage
 
 ```jsx
-import { MonthSelect } from 'QianYuanX';
+import { MonthSelect } from 'qianyuanx';
 import { Form } from 'antd';
 import React, { useState } from 'react';
 
@@ -37,7 +37,7 @@ export default () => {
 ### ChangTime value
 
 ```jsx
-import { MonthSelect } from 'QianYuanX';
+import { MonthSelect } from 'qianyuanx';
 import { Form } from 'antd';
 import React, { useState } from 'react';
 

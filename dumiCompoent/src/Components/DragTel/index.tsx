@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
 import React, { useEffect, useState } from "react";
 import {
   DndContext,
@@ -12,11 +13,11 @@ import {
   horizontalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import Item from "./item";
-import { TagTel } from 'QianYuanX';
+import { TagTel } from 'qianyuanx';
 
 interface IAppProps {
   list: any;
-  onChange?: (items: any) => void;
+  onChange: (items: any) => void;
 }
 
 const App: React.FunctionComponent<IAppProps> = (props) => {

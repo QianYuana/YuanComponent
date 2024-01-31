@@ -23,7 +23,7 @@ WasInput 输入加选择输入框最大的功能就是可以使用多行文本�
 ```tsx
 import * as React from 'react';
 import { useState } from 'react';
-import { WasInput } from 'QianYuanX';
+import { WasInput } from 'qianyuanx';
 import type { ColumnsType } from 'antd/es/table';
 
 interface DataType {
@@ -135,6 +135,9 @@ const App: React.FC = () => {
       onChange={(page: number, pageSize: number) => {
         console.log(page, pageSize, '外层分页');
       }}
+       onvalue={(value) => {
+        console.log(value);
+      }}
     />
   );
 };
@@ -146,7 +149,7 @@ export default App;
 ```tsx
 import * as React from 'react';
 import { useState } from 'react';
-import { WasInput } from 'QianYuanX';
+import { WasInput } from 'qianyuanx';
 import type { ColumnsType } from 'antd/es/table';
 
 interface DataType {

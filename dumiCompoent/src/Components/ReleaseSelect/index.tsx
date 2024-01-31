@@ -1,14 +1,22 @@
-/* eslint-disable @typescript-eslint/no-useless-constructor */
 /* eslint-disable no-param-reassign */
-/* eslint-disable eqeqeq */
+
 import React, { Component } from 'react';
 import { InputNumber, message, Select, DatePicker,Space } from 'antd';
 import moment from 'moment';
-export default class ReleaseSelect extends Component {
-  constructor(props: { onChange: (arg0: never[]) => void; value: any; }) {
-    super(props);
-  }
-  state = {
+interface IProps {
+  value: any;
+  onChange: (value: any) => void;
+}
+interface sta {
+  type: string;
+  dayNum: number;
+  time: any;
+}
+export default class ReleaseSelect extends Component<IProps> {
+  // constructor(props:IProps | Readonly<IProps>) {
+  //   super(props);
+  // }
+  state: sta = {
       type: 'day', //day 天，monents 日期
       dayNum: 0,
       time:''
@@ -35,12 +43,12 @@ export default class ReleaseSelect extends Component {
           ]}
         />
         <InputNumber
-          style={{ width: 180, marginRight: 10, display: this.state.type == 'day' ? 'block' : 'none' }}
+          style={{ width: 180, marginRight: 10, display: this.state.type === 'day' ? 'block' : 'none' }}
           placeholder="请输入"
           min={0}
           value={this.state.dayNum}
           onChange={(value:number | null) => {
-            if (value == null||value < 0  ) {
+            if (value === null||value < 0  ) {
               message.error('时间不能为空或不合法');
               value = 0;
             }
@@ -50,7 +58,7 @@ export default class ReleaseSelect extends Component {
         />
         <Space direction="vertical">
           <DatePicker
-            style={{ width: 150, marginRight: 10, display: this.state.type == 'monents' ? 'block' : 'none' }}
+            style={{ width: 150, marginRight: 10, display: this.state.type === 'monents' ? 'block' : 'none' }}
             showTime={{
               format: 'HH:mm',
             }}
@@ -65,7 +73,7 @@ export default class ReleaseSelect extends Component {
     );
   }
   onRelease = (value: any) => {
-    if(value != this.state.type){
+    if(value !== this.state.type){
         this.setState({
             type: value,
             time: '',
