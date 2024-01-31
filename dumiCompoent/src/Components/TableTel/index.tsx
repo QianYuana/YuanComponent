@@ -1,11 +1,11 @@
 import * as React from "react";
 // import type { PaginationProps } from "antd";
 import { Table, Pagination } from "antd";
-import type { ColumnsType } from "antd/es/table";
+// import type { ColumnsType } from "antd/es/table";
 import { GetRowKey, TableComponents, RowClassName } from "./interface";
-interface IAppProps<RecordType = unknown> {
+interface IAppProps<RecordType = any> {
   total?: number;
-  columns: ColumnsType;
+  columns: any;
   bordered?: boolean;
   dataSource: object[];
   onchange?: (page: number, pageSize: number) => void;

@@ -19,7 +19,7 @@ nav:
 ### 基础用法
 
 ```jsx
-import { TimeSelect } from 'QianYuanX';
+import { TimeSelect } from 'qianyuanx';
 import { Form } from 'antd';
 import React, { useState } from 'react';
 

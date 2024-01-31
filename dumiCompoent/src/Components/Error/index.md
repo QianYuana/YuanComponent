@@ -21,7 +21,7 @@ nav:
 ```tsx
 import * as React from 'react';
 import { useState } from 'react';
-import { Error } from 'QianYuanX';
+import { Error } from 'qianyuanx';
 
 const App: React.FC = () => {
   return (

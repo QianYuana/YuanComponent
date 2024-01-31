@@ -37,7 +37,7 @@ const DebounceSelect: React.FC<IAppProps> = (props) => {
       },
     });
   };
-  const filiter = (options: any[]): any[] => {
+  const filiter = (options:any[]): {label: string, value: string}[] => {
     let arr = options.map((item: any) => {
       return { label: item.patient, value: item.cardid };
     });
@@ -54,7 +54,8 @@ const DebounceSelect: React.FC<IAppProps> = (props) => {
         if (fetchId !== fetchRef.current) {
           return;
         }
-        newOptions.data && setOptions(filiter(newOptions.data));
+        const newOption:any = filiter(newOptions.data);
+        newOptions.data && setOptions(newOption);
         setFetching(false);
       });
     };
@@ -70,8 +71,8 @@ const DebounceSelect: React.FC<IAppProps> = (props) => {
       },
     }).then((newOptions: any) => {
       console.log(newOptions);
-
-      setOptions(filiter(newOptions.data));
+      const newOption:any = filiter(newOptions.data);
+      setOptions(newOption);
     });
   }, []);
   return (

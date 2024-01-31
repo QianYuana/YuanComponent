@@ -22,7 +22,7 @@ The original intention of the table template is that in development, we will ine
 ```tsx
 import * as React from "react";
 import { useState } from "react";
-import { TableTel } from 'QianYuanX';
+import { TableTel } from 'qianyuanx';
 import type { ColumnsType } from "antd/es/table";
 
 interface DataType {
@@ -142,7 +142,7 @@ export default App;
 ```tsx
 import * as React from "react";
 import { useState } from "react";
-import { TableTel } from 'QianYuanX';
+import { TableTel } from 'qianyuanx';
 import type { ColumnsType } from "antd/es/table";
 
 interface DataType {

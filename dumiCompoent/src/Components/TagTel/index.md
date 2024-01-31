@@ -21,7 +21,7 @@ nav:
 
 ```tsx
 import * as React from 'react';
-import { TagTel } from 'QianYuanX';
+import { TagTel } from 'qianyuanx';
 import { ArrowUpOutlined } from '@ant-design/icons';
 
 const App: React.FC = () => {
@@ -42,7 +42,7 @@ export default App;
 
 ```tsx
 import  React ,{useState} from 'react';
-import { TagTel } from 'QianYuanX';
+import { TagTel } from 'qianyuanx';
 import { ArrowUpOutlined,ArrowDownOutlined } from '@ant-design/icons';
 
 const App: React.FC = () => {

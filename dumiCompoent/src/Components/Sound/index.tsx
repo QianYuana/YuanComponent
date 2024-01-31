@@ -1,4 +1,3 @@
-/* eslint-disable eqeqeq */
 import React, { useRef, useState } from "react";
 import {
   PlayCircleFilled,
@@ -6,11 +5,9 @@ import {
   CheckCircleFilled,
 } from "@ant-design/icons";
 import './sound.less'
-function index(props:any) {
+function Index(props:any) {
   const { key, errKey, item, className } = props;
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const itemRef = useRef();
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const itemRef: React.RefObject<HTMLAudioElement> = useRef<HTMLAudioElement>(null);
   const [paused, setPaused] = useState(false);
   const audioUpdate = () => {
     setPaused(false)
@@ -30,10 +27,10 @@ function index(props:any) {
             style={{
               fontSize: "20px",
               marginLeft: "8px",
-              color: errKey == index ? "#fff" : "",
+              color: errKey === item.status ? "#fff" : "",
             }}
             onClick={() => {
-              itemRef.current.pause();
+              itemRef.current?.pause();
               setPaused(false);
             }}
           />
@@ -42,10 +39,10 @@ function index(props:any) {
             style={{
               fontSize: "20px",
               marginLeft: "8px",
-              color: errKey == index ? "#fff" : "",
+              color: errKey === item.status ? "#fff" : "",
             }}
             onClick={() => {
-              itemRef.current.play();
+              itemRef.current?.play();
               setPaused(true);
             }}
           />
@@ -56,7 +53,7 @@ function index(props:any) {
             fontSize: "20px",
             marginLeft: "8px",
             // eslint-disable-next-line eqeqeq
-            color: errKey == index ? "#fff" : "",
+            color: errKey === item.status ? "#fff" : "",
           }}
         />
       </div>
@@ -64,4 +61,4 @@ function index(props:any) {
   );
 }
 
-export default index;
+export default Index;

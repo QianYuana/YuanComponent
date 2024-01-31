@@ -21,7 +21,7 @@ In work, it may be necessary to traverse many tags, and a component needs to be 
 
 ```tsx
 import * as React from 'react';
-import { TagTel } from 'QianYuanX';
+import { TagTel } from 'qianyuanx';
 import { ArrowUpOutlined } from '@ant-design/icons';
 
 const App: React.FC = () => {
@@ -40,7 +40,7 @@ export default App;
 ### Change icon
 ```tsx
 import  React ,{useState} from 'react';
-import { TagTel } from 'QianYuanX';
+import { TagTel } from 'qianyuanx';
 import { ArrowUpOutlined,ArrowDownOutlined } from '@ant-design/icons';
 
 const App: React.FC = () => {

@@ -20,7 +20,7 @@ nav:
 ### 基础用法
 
 ```jsx
-import { ReleaseSelect } from 'QianYuanX';
+import { ReleaseSelect } from 'qianyuanx';
 import { Form } from 'antd';
 import React, { useState } from 'react';
 
@@ -38,7 +38,7 @@ export default () => {
 ### 非控件使用
 
 ```jsx
-import { ReleaseSelect } from 'QianYuanX';
+import { ReleaseSelect } from 'qianyuanx';
 import React, { useState } from 'react';
 
 export default () => {

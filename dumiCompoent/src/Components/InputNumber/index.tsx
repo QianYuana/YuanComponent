@@ -6,7 +6,7 @@ interface IProps {
   onChanges: (value: any) => Promise<void>;
   placeholder?: string;
   style?: any;
-  onChange?: (value: any) => void;
+  onChange: (value: any) => void;
 }
 const App: React.FC<IProps> = (props) => {
   const [state, setState] = useState(props.value || null);
