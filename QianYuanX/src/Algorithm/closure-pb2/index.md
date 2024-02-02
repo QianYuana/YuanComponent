@@ -15,67 +15,85 @@ nav:
 
 ## 问题描述
 
-给定一个整型参数 `n`，请你编写并返回一个 `counter` 函数。这个 `counter` 函数最初返回 `n`，每次调用它时会返回前一个值加 `1` 的值 `( n ,  n + 1 ,  n + 2 ，等等)`。
+请你编写一个函数，它接收一个函数数组 `[f1, f2, f3，…， fn]` ，并返回一个新的函数 `fn` ，它是函数数组的 复合函数 。
 
-**示例 1：**  
-**输入：**
-n = 10  
-["call","call","call"]  
-**输出：**[10,11,12]  
-**解释：**  
-counter( ) = 10 // 第一次调用 counter()，返回 n。  
-counter( ) = 11 // 返回上次调用的值加 1。  
-counter( ) = 12 // 返回上次调用的值加 1。  
+`[f(x)， g(x)， h(x)]` 的 复合函数 为 `fn(x) = f(g(h(x)))` 。
 
-**示例 2：**  
-**输入：**  
-n = -2  
-["call","call","call","call","call"]  
+一个空函数列表的 复合函数 是 `恒等函数 f(x) = x `。
 
-**输出：** [-2,-1,0,1,2]  
-**解释:** counter() 最初返回 -2。然后在每个后续调用后增加 1。  
+你可以假设数组中的每个函数接受一个整型参数作为输入，并返回一个整型作为输出。
 
-**提示：**  
--1000 <= n <= 1000  
-0 <= calls.length <= 1000  
-calls[i] === "call"  
+ 
 
-## 解题思路
-**自己的编写**
+**示例 1：**
 ```ts
-/**
- * @param {number} n
- * @return {Function} counter
- */
-var createCounter = function (n) {
-  let sum = null
-  return function () {
-    if (sum == null) {
-      sum = n
-    } else {
-      sum++
-    }
-    return sum
-  };
-};
-
-/** 
- * const counter = createCounter(10)
- * counter() // 10
- * counter() // 11
- * counter() // 12
- */
+输入：functions = [x => x + 1, x => x * x, x => 2 * x], x = 4
+输出：65
+解释：
+从右向左计算......
+Starting with x = 4.
+2 * (4) = 8
+(8) * (8) = 64
+(64) + 1 = 65
 ```
 
-**方法 1: 先增加再返回**  
-我们先声明一个变量 `currentCount` 并将其设置为` n - 1`。然后在 `counter` 函数内部，增加 `currentCount` 并返回其值。请注意，由于修改了 `currentCount` ，应该使用 `let` 而不是 `const` 来声明它。  
+**示例 2：**
+```ts
+输出：functions = [x => 10 * x, x => 10 * x, x => 10 * x], x = 1
+输入：1000
+解释：
+从右向左计算......
+10 * (1) = 10
+10 * (10) = 100
+10 * (100) = 1000
+```
+
+**示例 3：**
+```ts
+输入：functions = [], x = 42
+输出：42
+解释：
+空函数列表的复合函数就是恒等函数
+```
+
+**提示：**
+```ts
+-1000 <= x <= 1000
+0 <= functions.length <= 1000
+所有函数都接受并返回一个整型
+```
+
+
+## 解题思路
+
+题目的意思就是创建一个`compase`函数，我们需要返回一个函数`fn`，当我们调用 `fn(4)`,就把给的函数数组给执行一遍，
+首先我们可以把函数数组存到外部函数，也可以存一个变量sum,在内部函数，如果函数数组为空，直接返回 4 这个参数，
+否则，就从右向左把函数执行一遍，类似于 `ramda` 的`compase`函数
+我们也可以把函数数组反转，这样就是又左向右了。就好做了如下
 
 ```ts
-var createCounter = function(n: number) {
-  let currentCount = n - 1;
-  return function() {
-    currentCount += 1;
-    return currentCount;      
-  };
+/**
+ * @param {Function[]} functions
+ * @return {Function}
+ */
+var compose = function(functions) {
+    let arr=functions
+    let sum = 0
+	return function(x) {
+        if(arr.length == 0) {
+            return x
+        }else {
+            sum=x
+            arr.reverse().forEach((item,index)=>{ 
+                sum = item(sum)
+            })
+        }
+       return sum
+    }
 };
+
+/**
+ * const fn = compose([x => x + 1, x => 2 * x])
+ * fn(4) // 9
+ */
 ```
