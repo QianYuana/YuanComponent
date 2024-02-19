@@ -15,3 +15,4 @@ export { default as RuleSelect } from './Components/RuleSelect';
 export { default as DragTel } from './Components/DragTel';
 export { default as DataSelect } from './Components/DataSelect';
 export { default as DebounceSelect } from './Components/DebounceSelect';
+export { default as SelectInput} from "./Components/SelectInput"
