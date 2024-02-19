@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useRef } from "react";
-import { Input, message, Modal, Spin, Select } from "antd";
-import { EllipsisOutlined, AppstoreOutlined } from "@ant-design/icons";
+import React, { useEffect, useState } from "react";
+import {  Modal, Spin, Select } from "antd";
+import {  AppstoreOutlined } from "@ant-design/icons";
 
 import {TableTel} from "qianyuanx";
 import { GetRowKey, TableComponents, RowClassName } from "./interface";
