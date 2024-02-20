@@ -1,6 +1,6 @@
 ---
 toc: content
-order: 8
+order: 16
 group:
   title: Components
   
@@ -9,13 +9,13 @@ nav:
   path: /components
 ---
 
-# WasInput 
+# SelectInput
 
 ## Introduction
 
-The maximum function of WasInput input and select input box is that it can use multi-line text for input, and split it by line. At the same time, it can also select corresponding data.
-**Scenario:** Now we need to set the range rules, which can support users to edit in the text box. Each line is a data item. But there are also those who are not familiar with the business and need to check the data range. This will be used frequently in work. The component used is **TableTel**, which inherits all the properties of **TablTel**, so it can be used directly.
+SelectInput is an extended component of **WasInput**.
 
+**Scenario:** Now, we need to set up range rules that allow users to edit in the text box, where each line represents a piece of data. However, there are also users who are unfamiliar with the business and need to see the data in a selectable range. This scenario is frequently encountered in our work. It utilizes the **TableTel** component, which inherits all attributes of **TablTel** and can thus be directly used.
 ## Code Demo
 
 ### Basic Usage
@@ -23,7 +23,7 @@ The maximum function of WasInput input and select input box is that it can use m
 ```tsx
 import * as React from 'react';
 import { useState } from 'react';
-import { WasInput } from 'qianyuanx';
+import { SelectInput } from 'qianyuanx';
 import type { ColumnsType } from 'antd/es/table';
 
 interface DataType {
@@ -35,7 +35,7 @@ interface DataType {
 }
 
 const App: React.FC = () => {
-  const [loading, setLoading] = useState(false);   //弹窗数据加载
+  const [loading, setLoading] = useState(false); //弹窗数据加载
   const [data, setdata] = useState([
     {
       key: '1',
@@ -121,33 +121,35 @@ const App: React.FC = () => {
     },
   ];
   return (
-    <WasInput
+    <SelectInput
       size="large"
       maxRows={10}
       loading={loading}
       columns={columns}
       dataSource={data}
       rowKey={(record: any) => {
-        return record.key;
+        return `${record.key} + ${record.name} + ${record.age}`;
       }}
       total={data.length}
       children={<p>自定义模块，一般放搜索模块</p>}
       onChange={(page: number, pageSize: number) => {
-        console.log(page, pageSize,'控制分页数据');
-      }
-  }
+        console.log(page, pageSize, '外层分页');
+      }}
+       onvalue={(value) => {
+        console.log(value);
+      }}
     />
   );
 };
 export default App;
 ```
 
-### Control the value of Value (new)
+### 控制 Value 的值（新增）
 
 ```tsx
 import * as React from 'react';
 import { useState } from 'react';
-import { WasInput } from 'qianyuanx';
+import { SelectInput } from 'qianyuanx';
 import type { ColumnsType } from 'antd/es/table';
 
 interface DataType {
@@ -245,21 +247,21 @@ const App: React.FC = () => {
     },
   ];
   return (
-    <WasInput
+    <SelectInput
       size="large"
       maxRows={10}
       loading={loading}
       columns={columns}
       dataSource={data}
       rowKey={(record: any) => {
-        return record.key;
+        return  `${record.key} + ${record.name} + ${record.age}`;
       }}
       total={data.length}
       children={<p>自定义模块，一般放搜索模块</p>}
       onChange={(page: number, pageSize: number) => {
         console.log(page, pageSize,'外层分页');
       }}
-      value={'123456'}
+      value={{ids: ['1'],value:[{label:'Jim Brown (32)',value:'1'}]}}
       onvalue={(value) => {
         console.log(value);
       }}
