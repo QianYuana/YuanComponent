@@ -1,6 +1,6 @@
 ---
 toc: content
-order: 14
+order: 17
 group:
   title: 组件
 
@@ -9,7 +9,7 @@ nav:
   path: /components
 ---
 
-# DataSelect 数据下拉框
+# KeyInput 键盘事件输入
 
 ## 介绍
 
