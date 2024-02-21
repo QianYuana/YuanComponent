@@ -8,7 +8,7 @@ export default defineConfig({
       { type: 'components', dir: 'src/Components' }, // 组件导航
       { type: 'Hooks', dir: 'src/Hooks' }, // hooks导航
       { type: 'algorithm', dir: 'src/Algorithm' }, // 算法导航
-    ]
+    ],
   },
   themeConfig: {
     name: 'QianYuanx',
@@ -16,6 +16,8 @@ export default defineConfig({
     socialLinks: {
       github: 'https://github.com/QianYuana/YuanComponent.git',
     },
+    // editLink:true,
+    editLink: 'https://github.com/QianYuana/YuanComponent/tree/master/QianYuanX/{filename}'
   },
   locales: [
     { id: 'zh-CN', name: '中文' },
