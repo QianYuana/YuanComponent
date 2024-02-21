@@ -17,7 +17,7 @@ nav:
 ### 基础用法
 ```tsx
 import React, { useEffect, useState, useRef } from 'react';
-import useFocus from './index.tsx';
+import { useFocus } from 'qianyuanx';
 
 const App: React.FunctionComponent = () => {
   const divRef = useRef<HTMLDivElement>(null);

@@ -11,7 +11,7 @@ export default defineConfig({
     ]
   },
   themeConfig: {
-    name: 'qianyuanx',
+    name: 'QianYuanx',
     prefersColor: { switch: true },
     socialLinks: {
       github: 'https://github.com/QianYuana/YuanComponent.git',
