@@ -13,27 +13,27 @@ nav:
 
 ## 介绍
 
-在工作中很多下拉框不是固定取值的是由某一数据提供的，所以我们需要把数据处理成下拉框的数据源，所以 DataSelect 就是为了解决这个问题而开发的组件。
-
+在工作中很多输入框一般都需要使用键盘来进行确定，所以这里封装了一个键盘事件输入的组件，可以方便的使用键盘进行确认操作。  
+后面封装了`键盘Hooks`,方面大家使用
 ## 代码演示
 
 ### 基础用法
 
 ```tsx
 import * as React from 'react';
-import { DataSelect } from 'qianyuanx';;
+import { KeyInput } from 'qianyuanx';;
 
 const App: React.FC = () => {
   const options = [
-    { code: '1', name: '1号楼' },
-    { code: '2', name: '2号楼' },
-    { code: '3', name: '3号楼' },
-    { code: '4', name: '4号楼' },
+    { value: '1', label: '1号楼' },
+    { value: '2', label: '2号楼' },
+    { value: '3', label: '3号楼' },
+    { value: '4', label: '4号楼' },
   ];
   return (
-    <DataSelect
-      option={options}
-      onChange={(val) => {
+    <KeyInput
+      options={options}
+      onAdd={(val) => {
         console.log(val);
       }}
     />
@@ -42,42 +42,17 @@ const App: React.FC = () => {
 export default App;
 ```
 
-### 在表单中的用法
-
-```tsx
-import * as React from 'react';
-import { DataSelect } from 'qianyuanx';
-import { Form } from 'antd';
-
-const App: React.FC = () => {
-  const options = [
-    { code: '1', name: '1号楼' },
-    { code: '2', name: '2号楼' },
-    { code: '3', name: '3号楼' },
-    { code: '4', name: '4号楼' },
-  ];
-
-  return (
-    <Form>
-      <Form.Item label="楼号" name="sort">
-        <DataSelect option={options} />
-      </Form.Item>
-    </Form>
-  );
-};
-export default App;
-```
 
 ## API
 
 | 参数         | 说明                                 | 类型                    | 默认值 |
 | :----------- | :----------------------------------- | :---------------------- | :----- |
-| option       | 下拉框的数据源，必须是数组类型，且数组的每一项必须是一个对象 | Array<Record<string, any>> | -     |
-| onChange     | 下拉框选中项变化时的回调函数，返回选中项的值 | Function                | -     |
+| options       | 下拉框的数据源，必须是数组类型，且数组的每一项必须是一个对象 | {label: string; value: string; }[] | -     |
+| onAdd     | 触发确认的回调函数 | Function                | -     |
 
 ## 注意事项
 
-- 该组件在使用时页面需要先请求数据，防止用户进来就进行选择导致没有数据。
+- 该组件使用时直接使用，可以自行修改
 
 ## 最后
 
