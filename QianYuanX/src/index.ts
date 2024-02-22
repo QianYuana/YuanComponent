@@ -20,3 +20,4 @@ export { default as SelectInput} from "./Components/SelectInput";
 export { default as KeyInput} from "./Components/KeyInput";
 //HOOKS
 export { default as useFocus } from './Hooks/useFocus';
+export { default as useKey } from './Hooks/useKey'; 
