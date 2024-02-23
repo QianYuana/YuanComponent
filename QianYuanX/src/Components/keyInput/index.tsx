@@ -50,7 +50,7 @@ const App: React.FunctionComponent<IAppProps> = (props) => {
         value={data}
         style={{ width: '180px' }}
         onChange={(e) => setdata(e.target.value)}
-        onKeyPress={handleKeyPress}
+        onPressEnter={handleKeyPress}
       />
       <Button
         type="primary"
