@@ -4,8 +4,12 @@ import axios from 'axios';
 import { debounce } from 'lodash';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 interface IAppProps {
-  debounceTimeout: number;
-  type: string;
+  debounceTimeout?: number;
+  type?: string;
+  onChange?: (value: any) => void;
+  value?: any;
+  placeholder?:string;
+  style?:any
 }
 declare global {
   interface Window {
