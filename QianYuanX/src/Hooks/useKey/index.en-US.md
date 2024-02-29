@@ -10,36 +10,27 @@ nav:
 # useFocus 
 ## Introduction
 
-`UseFocus` is a `Hooks` used to determine whether the current click position is within a specified area, which can be used to determine whether the click position is within a specified area, thereby achieving some functions.
-In our work, we often encounter focal events, and because they are difficult to handle, we encapsulate them. We welcome everyone to use `useFocus` to handle focal events.
+`useKey` is a `Hook` used to determine the currently pressed key, which can be used to trigger other events through keyboard operations, thus achieving some functions. In our work, we often encounter keyboard events, so it is packaged for easy use. You are welcome to use `useKey` to handle keyboard events.
 
 ## Code Demo
 
 ### Basic Usage
 ```tsx
-import React, { useEffect, useState, useRef } from 'react';
-import useFocus from './index.tsx';
+import React, { useState } from 'react';
+import { useKey } from 'qianyuanx';
 
 const App: React.FunctionComponent = () => {
-  const divRef = useRef<HTMLDivElement>(null);
-  const [status, setStatus] = useState(false);
-  let Bool = useFocus(divRef);
+  const [num, setNum] = useState(0);
+  const onSearch = () => {
+    setNum(num + 1);
+    console.log('您按下了回车键盘！');
+  };
+  useKey('Enter', onSearch);
   return (
-    <div
-      onClick={() => {
-        setStatus(Bool);
-      }}
-    >
-      <div
-        ref={divRef}
-        style={{ width: '100px', height: '100px', backgroundColor: 'red' }}
-      >
-        div1区域
-      </div>
-      <p style={{ marginTop: '20px' }}>
-        当前点击位置是否在div1区域：{status.toString()}
-      </p>
-    </div>
+    <>
+      <p>请按回车</p>
+      <p>计数：{num}</p>
+    </>
   );
 };
 
