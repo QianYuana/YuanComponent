@@ -50,15 +50,26 @@
 
 **首页**  
 
-![image](https://github.com/QianYuana/YuanComponent/assets/102220953/5135899d-830a-4b09-abac-a7a028d48b0d)
+![image](https://github.com/QianYuana/YuanComponent/assets/102220953/63c0bf0e-3931-440b-997c-f8376a088498)
+
 
 **指南**  
 
-![image](https://github.com/QianYuana/YuanComponent/assets/102220953/85da1cd5-885a-4c75-8c39-06fb8cf16c0b)
+![image](https://github.com/QianYuana/YuanComponent/assets/102220953/bb4a2a77-7272-4be2-bce6-45bfef7b3cdd)
+
 
 **组件**  
 
-![image](https://github.com/QianYuana/YuanComponent/assets/102220953/6ca01515-b65c-4114-b0d6-90d9ff69807d)
+![image](https://github.com/QianYuana/YuanComponent/assets/102220953/2a60a216-19ba-4d4c-af55-5d1a8afcc287)
+
+**算法**  
+
+![image](https://github.com/QianYuana/YuanComponent/assets/102220953/d97f5e06-e353-4b45-9dfc-668310176190)
+
+**Hooks**  
+
+![image](https://github.com/QianYuana/YuanComponent/assets/102220953/886fbe83-277d-4913-b763-132dcf88a637)
+
 
 **使用方法**
 之前发布到了`GitHub Packages`,但是经常出现修改源码的情况，所以将不在发布了包管理，大家在使用的时候可以复制代码到`untils`工具中，用到的时候可以直接复制代码，复制到项目中，可自行修改使用。
