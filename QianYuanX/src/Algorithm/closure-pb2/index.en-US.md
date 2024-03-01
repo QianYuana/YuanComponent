@@ -2,74 +2,74 @@
 toc: content
 order: 4
 group:
-  title: 闭包
+  title: closure
 nav:
-  title: 算法
+  title: Algorithm
   path: /algorithm
   order: 3
 ---
 
-# 复合函数
+# Composite Function
 
-今天来到闭包最经典的题目：**复合函数** 
+Today, we'll come to the most classic topic of closures: **Composite Function**.
 
-## 问题描述
+## Problem Description
 
-请你编写一个函数，它接收一个函数数组 `[f1, f2, f3，…， fn]` ，并返回一个新的函数 `fn` ，它是函数数组的 复合函数 。
+Please write a function that receives an array of functions `[f1, f2, f3, …, fn]` and returns a new function `fn`, which is the composite function of the function array.
 
-`[f(x)， g(x)， h(x)]` 的 复合函数 为 `fn(x) = f(g(h(x)))` 。
+The composite function of `[f(x), g(x), h(x)]` is `fn(x) = f(g(h(x)))`.
 
-一个空函数列表的 复合函数 是 `恒等函数 f(x) = x `。
+The composite function of an empty function list is the identity function `f(x) = x`.
 
-你可以假设数组中的每个函数接受一个整型参数作为输入，并返回一个整型作为输出。
+You can assume that each function in the array takes an integer parameter as input and returns an integer as output.
 
- 
-
-**示例 1：**
+**Example 1:**
 ```ts
-输入：functions = [x => x + 1, x => x * x, x => 2 * x], x = 4
-输出：65
-解释：
-从右向左计算......
+Input: functions = [x => x + 1, x => x * x, x => 2 * x], x = 4
+Output: 65
+Explanation:
+Calculating from right to left...
 Starting with x = 4.
 2 * (4) = 8
 (8) * (8) = 64
 (64) + 1 = 65
 ```
 
-**示例 2：**
+**Example 2:**
 ```ts
-输出：functions = [x => 10 * x, x => 10 * x, x => 10 * x], x = 1
-输入：1000
-解释：
-从右向左计算......
+Input: functions = [x => 10 * x, x => 10 * x, x => 10 * x], x = 1
+Output: 1000
+Explanation:
+Calculating from right to left...
 10 * (1) = 10
 10 * (10) = 100
 10 * (100) = 1000
 ```
 
-**示例 3：**
+**Example 3:**
 ```ts
-输入：functions = [], x = 42
-输出：42
-解释：
-空函数列表的复合函数就是恒等函数
+Input: functions = [], x = 42
+Output: 42
+Explanation:
+The composite function of an empty function list is the identity function.
 ```
 
-**提示：**
+**Hints:**
 ```ts
 -1000 <= x <= 1000
 0 <= functions.length <= 1000
-所有函数都接受并返回一个整型
+All functions accept and return an integer.
 ```
 
+## Solution Explanation
 
-## 解题思路
+The goal of the problem is to create a `compose` function that returns a function `fn`. When we call `fn(4)`, it should execute the given array of functions.
 
-题目的意思就是创建一个`compase`函数，我们需要返回一个函数`fn`，当我们调用 `fn(4)`,就把给的函数数组给执行一遍，
-首先我们可以把函数数组存到外部函数，也可以存一个变量sum,在内部函数，如果函数数组为空，直接返回 4 这个参数，
-否则，就从右向左把函数执行一遍，类似于 `ramda` 的`compase`函数
-我们也可以把函数数组反转，这样就是又左向右了。就好做了如下
+We can store the function array in an outer function or a variable `sum` in the inner function. If the function array is empty, we can simply return the given argument `x`.
+
+Otherwise, we can execute the functions from right to left by reversing the array. This is similar to the `compose` function in `ramda`.
+
+We can also reverse the function array so that the execution is from left to right, which makes it easier to implement. Here's how the solution could look:
 
 ```ts
 /**
@@ -77,19 +77,19 @@ Starting with x = 4.
  * @return {Function}
  */
 var compose = function(functions) {
-    let arr=functions
-    let sum = 0
-	return function(x) {
-        if(arr.length == 0) {
-            return x
-        }else {
-            sum=x
-            arr.reverse().forEach((item,index)=>{ 
-                sum = item(sum)
-            })
+    let arr = functions;
+    let sum = 0;
+    return function(x) {
+        if (arr.length == 0) {
+            return x;
+        } else {
+            sum = x;
+            arr.reverse().forEach((item, index) => {
+                sum = item(sum);
+            });
         }
-       return sum
-    }
+        return sum;
+    };
 };
 
 /**
