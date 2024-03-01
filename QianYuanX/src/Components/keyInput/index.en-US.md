@@ -1,6 +1,6 @@
 ---
 toc: content
-order: 14
+order: 17
 group:
   title: Components
   
@@ -9,32 +9,31 @@ nav:
   path: /components
 ---
 
-# DataSelect
+# KeyInput 
 
 ## Introduction
 
-In work, many dropdown boxes are not fixed in value but are provided by a certain data source, so we need to process the data into a dropdown box data source. Therefore, DataSelect is a component developed to solve this problem.
+In many work scenarios, input fields often require confirmation using the keyboard, while also supporting scenarios such as barcode scanner input for business use. Therefore, this component, KeyInput, has been encapsulated to facilitate the use of keyboard confirmation operations. Additionally, keyboard hooks have been encapsulated for easier usage.
 
 ## Code Demonstration
 
 ### Basic Usage
 
-
 ```tsx
 import * as React from 'react';
-import { DataSelect } from 'qianyuanx';;
+import { KeyInput } from 'qianyuanx';
 
 const App: React.FC = () => {
   const options = [
-    { code: '1', name: '1号楼' },
-    { code: '2', name: '2号楼' },
-    { code: '3', name: '3号楼' },
-    { code: '4', name: '4号楼' },
+    { value: '1', label: 'Building 1' },
+    { value: '2', label: 'Building 2' },
+    { value: '3', label: 'Building 3' },
+    { value: '4', label: 'Building 4' },
   ];
   return (
-    <DataSelect
-      option={options}
-      onChange={(val) => {
+    <KeyInput
+      options={options}
+      onAdd={(val) => {
         console.log(val);
       }}
     />
@@ -42,42 +41,18 @@ const App: React.FC = () => {
 };
 export default App;
 ```
-### Usage in Forms
 
-```tsx
-import * as React from 'react';
-import { DataSelect } from 'qianyuanx';
-import { Form } from 'antd';
+## API
 
-const App: React.FC = () => {
-  const options = [
-    { code: '1', name: '1号楼' },
-    { code: '2', name: '2号楼' },
-    { code: '3', name: '3号楼' },
-    { code: '4', name: '4号楼' },
-  ];
+| Parameter | Description | Type | Default Value |
+| :--: | :--: | :--: | :--: |
+| options | Data source for the dropdown, must be an array of objects | {label: string; value: string; }[] | - |
+| onAdd | Callback function triggered on confirmation | Function | - |
 
-  return (
-    <Form>
-      <Form.Item label="楼号" name="sort">
-        <DataSelect option={options} />
-      </Form.Item>
-    </Form>
-  );
-};
-export default App;
-```
-
-### API
-
-| Parameter | Explanation | Type | Default Value |
-| :--- | :--- | :--- | :--- |
-| option | Dropdown box data source | Array | - |
-| onChange | Callback function when the value changes | Function | - |
 ## Precautions
 
-- When using this component, the page needs to first request data to prevent users from making choices and resulting in no data.
+- This component can be used directly and can be modified as needed.
 
-## Finally
+## Conclusion
 
-If you think it's good, you can click the "Star" button on the top right to support it, thank you.
+If you find this component useful, please feel free to click the **Star** button in the top right corner to show your support. Thank you!
