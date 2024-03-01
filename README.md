@@ -50,7 +50,7 @@
 
 **首页**  
 
-![image](https://github.com/QianYuana/YuanComponent/assets/102220953/63c0bf0e-3931-440b-997c-f8376a088498)
+![image](https://github.com/QianYuana/YuanComponent/assets/102220953/1d518b54-19f5-47fb-94ac-f9aaa8c47d47)
 
 
 **指南**  
