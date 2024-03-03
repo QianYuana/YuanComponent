@@ -29,6 +29,7 @@ const App: React.FunctionComponent<IAppProps> = (props) => {
 
   useEffect(() => {
     let defalutArr = new Array(props.cols || 2).fill([]);
+    
     setArrs(defalutArr);
     if (arrs.length !== 0 && props.data) {
       filiter(props.data);
@@ -40,7 +41,7 @@ const App: React.FunctionComponent<IAppProps> = (props) => {
       <ul className="grid">
         {arrs &&
           arrs.map((item) => (
-            <li key={item.toString()}>
+            <li key={Math.random()}>
               {item &&
                 item.map((item1) => (
                   <div key={item1.id} className="grid-item">
@@ -55,7 +56,6 @@ const App: React.FunctionComponent<IAppProps> = (props) => {
 };
 App.defaultProps = {
   cols: 2,
-  data: [],
   style: {},
 };
 
