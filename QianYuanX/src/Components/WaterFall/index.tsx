@@ -10,38 +10,28 @@ interface IAppProps {
 const App: React.FunctionComponent<IAppProps> = (props) => {
   const [arrs, setArrs] = useState<
     Array<Array<{ id: number; title: string; thumbnailUrl: string }>>
-  >([[],[]]);
+  >([]);
   const filiter = (arr: any[]) => {
     let num = 0;
-    let newArr = [...arrs];
-     arr.forEach((element: any) => {
-      if (num === props.cols-1) {
-        newArr[num].push(element);
-        num = 0;
-      } else {
-        newArr[num].push(element);
-        num++;
-      }
+    let newArr =arrs.length === 0 ?new Array(props.cols).fill([]).map(()=>[]): [...arrs];
+    arr.forEach((element: any) => {
+      newArr[num].push(element);
+      num = (num + 1) % props.cols;
     });
-    console.log(newArr);
     setArrs(newArr);
   };
-
   useEffect(() => {
-    let defalutArr = new Array(props.cols || 2).fill([]);
-    
-    setArrs(defalutArr);
-    if (arrs.length !== 0 && props.data) {
+    if (props.data) {
       filiter(props.data);
-    }
-  }, []);
+     }
+  }, [props.data]);
   return (
     <div className="app-1">
       <h1>瀑布流布局</h1>
       <ul className="grid">
         {arrs &&
           arrs.map((item) => (
-            <li key={Math.random()}>
+            <li key={JSON.stringify(item)}>
               {item &&
                 item.map((item1) => (
                   <div key={item1.id} className="grid-item">

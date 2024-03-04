@@ -9,7 +9,7 @@
     "url": "https://github.com/QianYuana/YuanComponent.git"
   },
   "scripts": {
-    "start": "npm run dev",
+    "start": "npm run dev & sleep 3 && open http://localhost:8000",
     "dev": "dumi dev",
     "build": "father build",
     "build:watch": "father dev",
