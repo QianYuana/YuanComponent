@@ -2,22 +2,22 @@
 toc: content
 order: 17
 group:
-  title: 组件
-
+  title: Components
+  
 nav:
-  title: 组件
+  title: Components
   path: /components
 ---
 
-# WaterFall 瀑布流布局
+# WaterFall
 
-## 介绍
+## Introduction
 
-现在很多业务展示需要使用`瀑布流布局`，有很多小伙伴不懂瀑布流到底是如何实现的？所以我根据瀑布流实现的原理，封装了`WaterFall`组件，只需传入`数据`与想要的`列数`就可以，大家在使用的时候可以直接拿源码使用！
+Many business displays nowadays require a `waterfall layout`. Many users don't understand how the waterfall layout is implemented. Therefore, based on the principle of the waterfall layout, I have encapsulated the `WaterFall` component. You only need to pass in the `data` and the desired number of `columns`, and you can use it directly in your projects!
 
-## 代码演示
+## Code Demo
 
-### 基础用法
+### Basic Usage
 
 ```tsx
 import * as React from 'react';
@@ -154,18 +154,18 @@ export default App;
 
 ## API
 
-| 参数    | 说明                                                         | 类型                               | 默认值 |
-| :------ | :----------------------------------------------------------- | :--------------------------------- | :----- |
-| data | 数据源，必须是数组类型，且数组的每一项必须是一个对象 | { id: number; title: string; thumbnailUrl: string }[] | -      |
-| cols   | 需要的列数                                  | Number                           | 2     |
-| style | 自定义样式 | object | - |
+| Property | Description | Type | Default |
+| --- | --- | --- | --- |
+| data | The data source. It must be an array, and each item in the array must be an object with the structure: `{ id: number; title: string; thumbnailUrl: string }[]` | Array | - |
+| cols | The number of columns required | Number | 2 |
+| style | Custom styles for the component | object | - |
 
+## Notes
 
-## 注意事项
+- This component can be used directly and can be modified as needed.
+- This component uses a `flex` layout, so make sure to add `flex-wrap: wrap;` where it is used.
+- If you need to use the `WaterFall` component and need to change the waterfall layout rules, you can message me directly or raise an issue.
 
-- 该组件使用时直接使用，可以自行修改
-- 该组件使用了`flex`布局，所以需要在使用的地方加上`flex-wrap: wrap;`
-- 如果需要使用`WaterFall`组件，并确需改瀑布流的判定规则可以私信我或提`issues`
-## 最后
+## Conclusion
 
-如果您觉得不错，可以点击右上角**Star**支持一下，谢谢。
+If you find it helpful, please consider giving it a star by clicking on the top right corner. Thank you.
