@@ -1,13 +1,13 @@
 ---
 toc: content
-order: 1
+order: 2
 nav:
   title: Hooks
   path: /hooks
   order: 4
 ---
 
-# useFocus 
+# useKey
 ## Introduction
 
 `useKey` is a `Hook` used to determine the currently pressed key, which can be used to trigger other events through keyboard operations, thus achieving some functions. In our work, we often encounter keyboard events, so it is packaged for easy use. You are welcome to use `useKey` to handle keyboard events.

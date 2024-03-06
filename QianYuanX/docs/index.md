@@ -7,6 +7,10 @@ hero:
       link: /guide
     - text: 组件文档
       link: /components/modal
+    - text: 算法文档
+      link: /algorithms/introduce
+    - text: Hooks文档
+      link: /hooks/use-focus
 features:
   - title: 学习
     emoji: 💎

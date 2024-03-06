@@ -1,6 +1,6 @@
 ---
 toc: content
-order: 1
+order: 2
 nav:
   title: Hooks
   path: /hooks
