@@ -54,15 +54,23 @@ nav:
 
 **首页**  
 
-![image](https://github.com/QianYuana/YuanComponent/assets/102220953/5135899d-830a-4b09-abac-a7a028d48b0d)
+![image](../public/images/home.png)
 
 **指南**  
 
-![image](https://github.com/QianYuana/YuanComponent/assets/102220953/85da1cd5-885a-4c75-8c39-06fb8cf16c0b)
+![image](../public/images/guide.png)
 
 **组件**  
 
-![image](https://github.com/QianYuana/YuanComponent/assets/102220953/6ca01515-b65c-4114-b0d6-90d9ff69807d)
+![image](../public/images/component.png)
+
+**算法模块** 
+
+![image](../public/images/algorithm.png)
+
+**Hooks**
+
+![image](../public/images/hooks.png)
 
 
 **使用方法**
