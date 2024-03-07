@@ -17,7 +17,8 @@ export default defineConfig({
       github: 'https://github.com/QianYuana/YuanComponent.git',
     },
     // editLink:true,
-    editLink: 'https://github.com/QianYuana/YuanComponent/tree/master/QianYuanX/{filename}'
+    editLink: 'https://github.com/QianYuana/YuanComponent/tree/master/QianYuanX/{filename}',
+    footer: "<span><img src='/images/logo1.svg'/><b>千源星</b><span class='footer-span'>|</span><b>作者：贾梦源</b></span><br><span>Copyright © 2023-present<span> "
   },
   locales: [
     { id: 'zh-CN', name: '中文' },
