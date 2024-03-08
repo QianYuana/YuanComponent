@@ -31,9 +31,9 @@ const App: React.FC = () => {
     <InputNumber
       style={{ width: '180px' }}
       onChanges={(e: any) => {
-        if (e > 100) {
+        if (e > 100 || e < 0) {
           message.destroy();
-          message.error('超出最大数量100');
+          message.error('超出最大数量100或最小数量 0');
           return Promise.reject();
         }
         return Promise.resolve(e);
