@@ -1,19 +1,20 @@
 import { Input } from 'antd';
 import React, { useEffect, useState } from 'react';
 
-interface IProps {
-  value: any;
-  onChanges: (value: any) => Promise<void>;
+interface IProps<T> {
+  value: string | number | readonly string[] | undefined;
+  onChanges: (value: T) => Promise<T>;
   placeholder?: string;
   style?: any;
   onChange: (value: any) => void;
 }
-const App: React.FC<IProps> = (props) => {
-  const [state, setState] = useState(props.value || null);
 
-  const onChange = (e: any) => {
-    props.onChanges(e.target.value).then((value) => {
-      setState(value);
+const App: React.FC<IProps<string | number | readonly string[] | undefined>> = (props) => {
+  const [state, setState] = useState(props.value || undefined);
+
+  const onChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    props.onChanges(e.target.value).then((value:string | number | readonly string[] | undefined) => {
+      return setState(value);
     });
   };
   useEffect(() => {

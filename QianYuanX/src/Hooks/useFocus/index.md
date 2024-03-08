@@ -21,7 +21,7 @@ import { useFocus } from 'qianyuanx';
 
 const App: React.FunctionComponent = () => {
   const divRef = useRef<HTMLDivElement>(null);
-  const [status, setStatus] = useState(false);
+  const [status, setStatus] = useState<boolean>(false);
   let Bool = useFocus(divRef);
   return (
     <div

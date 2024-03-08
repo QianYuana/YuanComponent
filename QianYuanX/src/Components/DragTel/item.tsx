@@ -3,7 +3,7 @@ import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 
 interface IAppProps {
-  id?: any;
+  id: string | number;
   children?: React.ReactNode;
 }
 

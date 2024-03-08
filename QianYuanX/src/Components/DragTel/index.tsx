@@ -16,7 +16,7 @@ import Item from "./item";
 import { TagTel } from 'qianyuanx';
 
 interface IAppProps {
-  list: any;
+  list: object[];
   onChange: (items: any) => void;
 }
 
