@@ -23,9 +23,9 @@ import React, { useState } from 'react';
 import { useKey } from 'qianyuanx';
 
 const App: React.FunctionComponent = () => {
-  const [num, setNum] = useState(0);
+  const [num, setNum] = useState<number>(0);
   const onSearch = () => {
-    setNum(num + 1);
+    setNum(num=>num + 1);
     console.log('您按下了回车键盘！');
   };
   useKey('Enter', onSearch);
