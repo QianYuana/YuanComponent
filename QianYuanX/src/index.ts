@@ -17,7 +17,7 @@ export { default as DragTel } from './Components/DragTel';
 export { default as DataSelect } from './Components/DataSelect';
 export { default as DebounceSelect } from './Components/DebounceSelect';
 export { default as SelectInput} from "./Components/SelectInput";
-export { default as KeyInput} from "./Components/KeyInput";
+export { default as KeyInput} from "./Components/keyInput";
 export { default as WaterFall} from "./Components/WaterFall";
 //HOOKS
 export { default as useFocus } from './Hooks/useFocus';
