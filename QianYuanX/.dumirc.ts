@@ -24,6 +24,12 @@ export default defineConfig({
     { id: 'zh-CN', name: '中文' },
     { id: 'en-US', name: 'English' },
   ],
+  favicons: [
+    // 完整地址
+    // 'https://domain.com/favicon.ico',
+    // 此时将指向 `/favicon.png` ，确保你的项目含有 `public/favicon.png`
+    '/images/logo1.svg'
+  ],
   logo: '/images/logo1.svg',
   styles: [`.dumi-default-logo {font-family: Alibaba-PuHuiTi, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}
   `, `.dumi-default-header-right {
