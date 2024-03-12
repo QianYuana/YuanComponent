@@ -20,7 +20,6 @@ const http = ({ method, url, data, headers = {} }: { method: string, url: string
         break;
       case 'POST':
         xhr.open(method, url, true);
-
         // 将对象的键值对添加到 FormData 中
         Object.keys(data).forEach(function (key) {
           formData.append(key, data[key]);
