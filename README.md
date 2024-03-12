@@ -3,7 +3,7 @@
 基于 `antd 4.x` 封装的组件库，免费开源，都是在工作中常用的业务场景，把它进行二次封装同时封装成 dumi 组件库，方便使用。
 当前组件库包括`组件`、`算法模块`、`Hooks`三部分，主要负责同学的日常开发速率，并锻炼自己的思维逻辑，希望可以帮到大家。
 
-## 项目介绍
+## 🔅 项目介绍
 
 **compoentLibrary** 初期使用`Vite`和`React`搭建，界面不是很完整，同时代码在**受控与不受控的模式**下，有些情况会不兼容。所以思考换个模式。（后期不再维护）
 
@@ -12,7 +12,7 @@
 **发展方向**
 后面将会为大家分享各种知识，目前正在钻研前端框架搭建的知识，掌握前端工程化。相信很快会与大家见面！！可以留下你的**STAR**，到时会第一时间知道哦。
 
-## 目录结构
+## 📖 目录结构
 
 ```bash
 .
@@ -48,28 +48,28 @@
 
 ```
 
-**首页**  
+**📎 首页**  
 
 ![image](./QianYuanX/public/images/home.png)
 
 
-**指南**  
+**📎 指南**  
 
 ![image](./QianYuanX/public/images/guide.png)
 
 
-**组件**  
+**📎 组件**  
 
 ![image](./QianYuanX/public/images/component.png)
 
-**算法模块**  
+**📎 算法模块**  
 
 ![image](./QianYuanX/public/images/algorithm.png)
 
-**Hooks**  
+**📎 Hooks**  
 
 ![image](./QianYuanX/public/images/hooks.png)
 
 
-**使用方法**
+**💻 使用方法**  
 之前发布到了`GitHub Packages`,但是经常出现修改源码的情况，所以将不在发布了包管理，大家在使用的时候可以复制代码到`untils`工具中，用到的时候可以直接复制代码，复制到项目中，可自行修改使用。
