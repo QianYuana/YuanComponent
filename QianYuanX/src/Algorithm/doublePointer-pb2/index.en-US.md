@@ -1,52 +1,91 @@
 ---
 toc: content
-order: 2
-title: The concept of closures
+order: 9
+title: Linked List Cycle II
 group:
-  title: closure
+  title: Two Pointers
 nav:
   title: Algorithm
   path: /algorithm
   order: 3
----
+---  
 
-# Closure
+# Linked List Cycle II
 
-For front-end developers, closures are a difficult concept to understand and master! Because the generation of closures is not only related to the scope of variables, but also closely related to the lifecycle of variables. Finally, I can confidently tell you that closures are widely used in practical development, so you **must master** it.
+## Problem Description
+Given a `head` of a linked list, return the node where the cycle begins. If there is no cycle, return `null`.
 
-## Definition of closure
+If a linked list has a cycle, you can find the cycle's start. There are several ways to define the start of the cycle. In this problem, we use `pos` which represents the position (0-indexed) in the linked list where tail connects to. If `pos` is `-1`, then there is no cycle in the linked list.
 
-A closure is a function that has access to the variables in the scope of another function. **In simple terms, it means creating another function inside a function**.
+**You should not modify the linked list.**
 
-## The role of closure
+**Example 1:**  
 
-The role of closures is to enable functions to have state, so that even after the function's execution ends, its internal variables still exist and can be accessed.
-
-## Code example
-Maybe if you only look at the concept, you don't know how closures arise. The following code example will illustrate the creation of closures.
-
+![image](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist.png)
 ```ts
-function add(x : number) {
-  return function(y : number) {
-    return x + y;
-  };
-}
+Input: head = [3,2,0,-4], pos = 1
+Output: Return the node where the cycle begins
+Explanation: There is a cycle in the linked list, where the tail connects to the second node.
+```  
 
-var f = add(1);
-console.log(f(2)); // 3
+**Example 2:**  
+
+![image](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist_test2.png)
+```ts
+Input: head = [1,2], pos = 0
+Output: Return the node where the cycle begins
+Explanation: There is a cycle in the linked list, where the tail connects to the first node.
+```
+**Example 3:**   
+
+![image](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist_test3.png)
+```ts
+Input: head = [1], pos = -1
+Output: Return null
+Explanation: There is no cycle in the linked list.
 ```
 
-In the above code, the function `add` receives a parameter `x` and returns a function. This returned function takes a parameter `y` and returns `x + y`.
-This creates a closure that can access the parameter `x` of the outer function `add`. When the function `f` is called, it passes the parameter `2` into the function `add` and returns `x + y`, which is `3`.
+**Solution**
+```ts
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     val: number
+ *     next: ListNode | null
+ *     constructor(val?: number, next?: ListNode | null) {
+ *         this.val = (val===undefined ? 0 : val)
+ *         this.next = (next===undefined ? null : next)
+ *     }
+ * }
+ */
 
-## Advantages of closures
-
-- Closures allow us to store the state of functions internally, avoiding the need for global variables.
-- The advantage of closures lies in the fact that they allow us to define functions outside of the scope of the function itself, eliminating the need to redefine functions within their own scope.
-- Closures keep these variable values in memory, ensuring that they are not cleared after function calls.
-
-## Disadvantages of closures
-Closures are indeed useful, but there are also some disadvantages:
-- Closures can lead to memory leaks because they persist in memory until no other variables point to them.
-- Closures can cause memory consumption to become excessive because all variables in the function are stored in memory, leading to performance issues on web pages. The solution is to delete all local variables that are no longer needed before exiting the function.
-- Closures allow the values of variables inside functions to be modified from outside the function. Therefore, if you use the outer function as an object and closures as its public methods, and internal variables as private values, you must be careful not to randomly change the values of variables inside the outer function.
+function detectCycle(head: ListNode | null): ListNode | null {
+    // Check if head is null or head.next is null
+    if (!head || !head.next) {
+        return null
+    }
+    // Initialize slow and fast pointers
+    let slow = head
+    let fast = head
+    // When fast pointer exists
+    while (fast && fast.next) {
+        // Slow pointer moves one step, fast pointer moves two steps
+        slow = slow.next
+        fast = fast.next.next
+        // When they meet
+        if (slow === fast){
+            // Reinitialize slow pointer
+            slow = head
+            // Loop until slow pointer is not equal to current fast pointer
+            while (slow !== fast) {
+                slow = slow.next
+                fast = fast.next
+            }
+            // When slow pointer meets fast pointer, it's the starting point of the cycle
+            return slow
+        }
+    }
+    // If fast pointer doesn't exist or its next doesn't exist, there is no cycle
+    return null
+};
+```
