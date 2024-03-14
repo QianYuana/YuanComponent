@@ -83,32 +83,34 @@ const _getTable = (sizeDisplayMethod) => {
  * 4. 创建并返回 ReactElement
  */
 export function createElement(type, config, children) {
-  if (__DEV__) {
-    if (!isValidElementType(type)) {
+  if (__DEV__) {   //如果处于开发模式
+    if (!isValidElementType(type)) { //检查传入的元素类型是否有效，如果无效，发出警告信息。
       // 这是一个无效的元素类型。
       //
       // 我们会在这种情况下发出警告，但不会抛出错误。我们期望元素的创建会成功，
       // 但可能在渲染时会出现错误。
-      let info = '';
+      let info = '';    //初始化一个信息字符串，用于存储警告信息。
       if (
         type === undefined ||
         (typeof type === 'object' &&
           type !== null &&
           Object.keys(type).length === 0)
-      ) {
+      ) {  //如果类型为 undefined 或者是一个空对象，则提示开发者可能忘记导出组件或混淆了默认导出和命名导入。
         info +=
           ' 你可能忘记从定义组件的文件中导出你的组件，或者可能混淆了默认导出和命名导入。';
       }
 
-      let typeString;
+      let typeString;   //初始化一个变量，用于存储类型的字符串表示。
       if (type === null) {
         typeString = 'null';
       } else if (isArray(type)) {
         typeString = 'array';
-      } else if (type !== undefined && type.$$typeof === REACT_ELEMENT_TYPE) {
+      } else if (type !== undefined && type.$$typeof === REACT_ELEMENT_TYPE) { 
+        //如果类型为 React 元素对象，则类型字符串为元素的组件名或 'Unknown'，并提醒开发者可能意外地导出了 JSX 字面量。
         typeString = `<${getComponentNameFromType(type.type) || '未知'} />`;
         info = ' 你是否意外地导出了一个 JSX 字面量而不是一个组件？';
       } else {
+        //否则，类型字符串为类型的类型名。
         typeString = typeof type;
       }
 
@@ -127,22 +129,32 @@ export function createElement(type, config, children) {
       for (let i = 2; i < arguments.length; i++) {
         validateChildKeys(arguments[i], type);
       }
+      // 对传入的子元素进行键值验证。
     }
 
     // 与 jsx() 运行时不同，createElement() 不会警告键值扩展。
   }
-
+    /**
+   * propName -> 属性名称
+   * 用于后面的 for 循环
+   */
   let propName;
 
-  // Reserved names are extracted
+   /**
+   * 存储 React Element 中的普通元素属性 即不包含 key ref ,     self source 在18已经删除了
+   */
   const props = {};
 
+    /**
+   * 待提取属性
+   * React 内部为了实现某些功能而存在的属性
+   */
   let key = null;
   let ref = null;
 
-  if (config != null) {
-    if (hasValidRef(config)) {
-      if (!enableRefAsProp) {
+  if (config != null) {  //如果配置项不为null，
+    if (hasValidRef(config)) {    // // 如果 config 对象中有合法的 ref 属性
+      if (!enableRefAsProp) { //如果未启用 enableRefAsProp，则将 ref 属性赋值给 ref 变量。
         ref = config.ref;
       }
 
