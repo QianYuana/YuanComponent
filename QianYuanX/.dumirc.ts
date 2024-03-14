@@ -8,6 +8,7 @@ export default defineConfig({
       { type: 'components', dir: 'src/Components' }, // 组件导航
       { type: 'Hooks', dir: 'src/Hooks' }, // hooks导航
       { type: 'algorithm', dir: 'src/Algorithm' }, // 算法导航
+      { type: 'sourceCode', dir: 'src/SourceCode' }, // react源码导航
     ],
   },
   themeConfig: {
