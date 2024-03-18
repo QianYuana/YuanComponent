@@ -10,7 +10,24 @@ nav:
 ---
 # reactElement
 
-当 createElement 函数被调用的时候, 最后会调用  ReactElement 方法返回 ReactElement 对象
+当 createElement 函数被调用的时候, 最后会调用  ReactElement 方法返回 ReactElement 对象。
+
+## 注意
+ReactElement 是 React 库中的一个重要概念，代表着 React 应用中的一个元素。在 React 应用中，UI 是由多个 ReactElement 组成的，它们描述了你希望在页面上看到的内容。ReactElement 对象包含了构成元素的所有信息，如类型、属性、子元素等，并在 React 应用中被用于构建虚拟 DOM。
+
+以下是对 ReactElement 的一些关键属性的解释：
+
+- **type：** 表示 ReactElement 的类型，可以是字符串、函数或者类。当类型为字符串时，表示该元素是一个 HTML 原生标签；当类型为函数或者类时，表示该元素是一个自定义组件。
+
+- **key：** 用于标识元素的唯一性，帮助 React 更高效地更新 DOM。通常用于列表渲染中，用来识别列表中的每个元素，以便 React 能够正确地跟踪它们的变化。
+
+- **ref：** 用于引用元素的实例或 DOM 元素。可以用于访问组件实例或 DOM 元素，并进行相应的操作。通常在组件中使用 ref 来获取子组件的实例或操作 DOM 元素。
+
+- **props：** 表示元素的属性，是一个包含了所有属性和值的对象。
+
+- **_owner：** 表示创建该元素的组件。在开发过程中，用于调试和跟踪组件的层级结构。
+
+ReactElement 对象是不可变的，一旦创建就不能更改其内容。React 使用 ReactElement 来构建虚拟 DOM，然后根据虚拟 DOM 来更新实际的 DOM。因此，理解和掌握 ReactElement 对象是很重要的，它是 React 应用中构建 UI 的基础。
 ```ts
 /**
  * 接收参数 返回 ReactElement
