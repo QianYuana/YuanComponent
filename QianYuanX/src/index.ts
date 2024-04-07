@@ -20,6 +20,8 @@ export { default as SelectInput} from "./Components/SelectInput";
 export { default as KeyInput} from "./Components/keyInput";
 export { default as WaterFall} from "./Components/WaterFall";
 export {default as Http} from "./Components/Http"
+export { HttpConcurrency as HttpConcurrency } from './Components/HttpConcurrency';
 //HOOKS
 export { default as useFocus } from './Hooks/useFocus';
 export { default as useKey } from './Hooks/useKey'; 
+
