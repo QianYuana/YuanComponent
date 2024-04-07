@@ -30,4 +30,7 @@ packageData.version = verarr.join('.')
 fs.writeFile('./public/sysInfo.json', JSON.stringify(packageData, null, '\t'), err => {
   console.log(err)
 })
+ // 将接收到的数据写入到临时的 JSON 文件中
+ fs.writeFileSync('tempFile.json', JSON.stringify(packageData));
+
 
