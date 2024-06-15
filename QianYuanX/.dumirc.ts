@@ -31,6 +31,13 @@ export default defineConfig({
     // 此时将指向 `/favicon.png` ，确保你的项目含有 `public/favicon.png`
     '/images/logo1.svg'
   ],
+  proxy: {
+    '/api': {
+      'target': 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=3a744b62-1c69-405e-bf6e-8a916f70d62b',
+      'changeOrigin': true,
+      'pathRewrite': { '^/api' : '' },
+    }
+  },
   logo: '/images/logo1.svg',
   styles: [`.dumi-default-logo {font-family: Alibaba-PuHuiTi, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}
   `, `.dumi-default-header-right {
