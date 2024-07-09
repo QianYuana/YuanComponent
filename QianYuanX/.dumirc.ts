@@ -2,9 +2,9 @@ import { defineConfig } from 'dumi';
 
 export default defineConfig({
   outputPath: 'docs-dist',
-  base: '/',
+  base: '/YuanComponent/',
   publicPath:
-    process.env.NODE_ENV === 'production' ? '/' : '/',
+    process.env.NODE_ENV === 'production' ? '/YuanComponent/' : '/',
   resolve: {
     // 设置横向导航栏
     atomDirs: [
@@ -25,7 +25,7 @@ export default defineConfig({
       'https://github.com/QianYuana/YuanComponent/tree/master/QianYuanX/{filename}',
     footer: `<span><img src='${
       process.env.NODE_ENV === 'production'
-        ? '/images/logo1.svg'
+        ? '/YuanComponent/images/logo1.svg'
         : '/images/logo1.svg'
     }'/><b>千源星</b><span class='footer-span'>|</span><b>作者：贾梦源</b></span><br><span>Copyright © 2023-present<span> `,
   },
@@ -38,7 +38,7 @@ export default defineConfig({
     // 'https://domain.com/favicon.ico',
     // 此时将指向 `/favicon.png` ，确保你的项目含有 `public/favicon.png`
     process.env.NODE_ENV === 'production'
-      ? '/images/logo1.svg'
+      ? '/YuanComponent/images/logo1.svg'
       : '/images/logo1.svg',
   ],
   proxy: {
@@ -51,7 +51,7 @@ export default defineConfig({
   },
   logo:
     process.env.NODE_ENV === 'production'
-      ? '/images/logo1.svg'
+      ? '/YuanComponent/images/logo1.svg'
       : '/images/logo1.svg',
   styles: [
     `.dumi-default-logo {font-family: Alibaba-PuHuiTi, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}
@@ -103,7 +103,7 @@ export default defineConfig({
 }`,
     `${
       process.env.NODE_ENV === 'production'
-        ? '/less/index.less'
+        ? '/YuanComponent/less/index.less'
         : '/less/index.less'
     }`,
   ],
