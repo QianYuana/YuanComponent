@@ -3,8 +3,7 @@ import { defineConfig } from 'dumi';
 export default defineConfig({
   outputPath: 'docs-dist',
   base: '/YuanComponent/',
-  publicPath:
-    process.env.NODE_ENV === 'production' ? '/YuanComponent/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/YuanComponent/' : '/',
   resolve: {
     // 设置横向导航栏
     atomDirs: [
@@ -12,6 +11,7 @@ export default defineConfig({
       { type: 'Hooks', dir: 'src/Hooks' }, // hooks导航
       { type: 'algorithm', dir: 'src/Algorithm' }, // 算法导航
       { type: 'sourceCode', dir: 'src/SourceCode' }, // react源码导航
+      { type: 'knowledges', dir: 'src/Knowledge' }, // 知识星球
     ],
   },
   themeConfig: {

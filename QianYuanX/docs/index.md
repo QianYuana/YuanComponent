@@ -11,6 +11,8 @@ hero:
       link: /algorithms/introduce
     - text: Hooks文档
       link: /hooks/use-focus
+    - text: 知识星球
+      link: /knowledges/vue
 features:
   - title: 学习
     emoji: 💎
