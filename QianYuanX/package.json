@@ -14,7 +14,7 @@
     "dev": "dumi dev",
     "build": "father build",
     "build:watch": "father dev",
-    "docs:build": "node ./public/addVersion.js && dumi build",
+    "docs:build": "dumi build",
     "prepare": "husky install && dumi setup",
     "doctor": "father doctor",
     "lint": "npm run lint:es && npm run lint:css",
