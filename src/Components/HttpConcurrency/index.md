@@ -9,11 +9,11 @@ nav:
   path: /components
 ---
 
-# HttpConcurrency 数据请求
+# HttpConcurrency 数据并发请求
 
 ## 介绍
 
-每个项目在搭建时都需要封装该项目的`http请求`,这里封装了一下大部分场景的`原生Ajax`,目前封装了`get`,`post`,还有`ajax(通用)`,在使用的时候可以直接在源码中进行修改，封装符合项目的`http`
+基于封装的`Http`请求，做出并发请求的封装可以自行控制并发的数量
 
 ## 代码演示
 
@@ -25,12 +25,12 @@ import { HttpConcurrency } from 'qianyuanx';
 
 const App: React.FC = () => {
   const [httpList, setHttpList] = useState(
-    Array(100).fill('http://47.97.251.117:3000/h_patient'),
+    Array(10).fill('http://47.97.251.117:3000/h_patient'),
   );
   const [text, setText] = useState([]);
   const fetchData = async () => {
     httpList.forEach(async (item, index) => {
-      await HttpConcurrency(item, 10)
+      await HttpConcurrency(item, 2)
         .then((res) => {
           // console.log(`当前请求：${index} 成功`);
           // arr.push(`当前请求：${index} 成功`);
