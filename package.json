@@ -4,7 +4,7 @@
   "description": "基于Antd 4.x的资源库，用于React开发的组件库",
   "repository": {
     "type": "git",
-    "url": "https://github.com/QianYuana/YuanComponent.git"
+    "url": "https://github.com/QianYuana/QianYuanX.git"
   },
   "license": "MIT",
   "module": "dist/index.js",

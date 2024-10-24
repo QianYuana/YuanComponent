@@ -2,8 +2,8 @@ import { defineConfig } from 'dumi';
 
 export default defineConfig({
   outputPath: 'docs-dist',
-  base: '/YuanComponent/',
-  publicPath: process.env.NODE_ENV === 'production' ? '/YuanComponent/' : '/',
+  base: '/QianYuanX/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/QianYuanX/' : '/',
   resolve: {
     // 设置横向导航栏
     atomDirs: [
@@ -18,14 +18,14 @@ export default defineConfig({
     name: 'QianYuanx',
     prefersColor: { switch: true },
     socialLinks: {
-      github: 'https://github.com/QianYuana/YuanComponent.git',
+      github: 'https://github.com/QianYuana/QianYuanX.git',
     },
     // editLink:true,
     editLink:
-      'https://github.com/QianYuana/YuanComponent/tree/master/QianYuanX/{filename}',
+      'https://github.com/QianYuana/QianYuanX/tree/master/QianYuanX/{filename}',
     footer: `<span><img src='${
       process.env.NODE_ENV === 'production'
-        ? '/YuanComponent/images/logo1.svg'
+        ? '/QianYuanX/images/logo1.svg'
         : '/images/logo1.svg'
     }'/><b>千源星</b><span class='footer-span'>|</span><b>作者：贾梦源</b></span><br><span>Copyright © 2023-present<span> `,
   },
@@ -38,7 +38,7 @@ export default defineConfig({
     // 'https://domain.com/favicon.ico',
     // 此时将指向 `/favicon.png` ，确保你的项目含有 `public/favicon.png`
     process.env.NODE_ENV === 'production'
-      ? '/YuanComponent/images/logo1.svg'
+      ? '/QianYuanX/images/logo1.svg'
       : '/images/logo1.svg',
   ],
   proxy: {
@@ -51,7 +51,7 @@ export default defineConfig({
   },
   logo:
     process.env.NODE_ENV === 'production'
-      ? '/YuanComponent/images/logo1.svg'
+      ? '/QianYuanX/images/logo1.svg'
       : '/images/logo1.svg',
   styles: [
     `.dumi-default-logo {font-family: Alibaba-PuHuiTi, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}
@@ -103,7 +103,7 @@ export default defineConfig({
 }`,
     `${
       process.env.NODE_ENV === 'production'
-        ? '/YuanComponent/less/index.less'
+        ? '/QianYuanX/less/index.less'
         : '/less/index.less'
     }`,
   ],
